@@ -1,0 +1,149 @@
+\chapter[Durable equilibria]{Equilibria of the durable goods model}
+\label{cha:equil-durable-goods}
+
+\section{Time-consistency without precommitment}
+\label{sec:time-cons-equil}
+To solve this game by maximising the Bellman function
+\eqref{tc:bell} with respect to $p^t$ first differentiate it with
+respect to that variable to give the first-order condition
+\begin{gather}  \label{tc:foc}
+    \del{V^t}{p^t} = w^t_2 + w^t_3 f^{t+1}_1 + \delta V^{t+1}_1 = 0 \\
+    \intertext{which rearranges to give} \label{tc:Bellval}
+    V^{t+1}_1 = - \frac{w^t_2 + w^t_3 f^{t+1}_1}{\delta}.
+\end{gather}
+Now, to find the envelope condition that holds for the optimal
+strategy, differentiate $V^t$ with respect to the state variable
+$p^{t-1}$:
+\begin{equation}
+    V^t_1 = w^t_1 + f^t_1 \bigl( w^t_2  + w^t_3 f^{t+1}_1 + \delta
+    V^{t+1}_1 \bigr)
+\end{equation}
+Since, at the optimal point, the first order condition from
+\eqref{tc:foc} holds, we know that $w^t_2 + w^t_3 f^{t+1}_1 + \delta
+V^{t+1}_1 = 0$ and the envelope condition is thus
+\begin{equation}    \label{tc:envelope}
+    V^t_1 = w^t_1
+\end{equation}
+Now substituting the derivative of the Bellman value function from
+\eqref{tc:envelope} into equation \eqref{tc:Bellval} gives equation
+\eqref{tc:mpe}.
+
+
+\section{MPE of the taxation game}
+\label{sec:mpe-taxation-game}
+\subsubsection{The regulator's necessary condition} The first order
+condition for the regulator is derived by differentiating the
+regulator's Bellman equation with respect to $\tau^t$ and setting it
+equal to zero.
+\begin{equation}    \label{reg:foc}
+    \del{W^t}{\tau^t} = w^t_3 g^{t+1}_2 + \delta W^{t+1}_2 = 0
+\end{equation}
+Thus the Bellman value function for the regulator is characterised
+by
+\begin{equation}    \label{reg:Bellval}
+    W^{t+1}_2 = -\frac{w^t_3 g^{t+1}_2}{\delta}.
+\end{equation}
+To solve for the generalised Euler-Lagrange equations which
+characterise the equilibrium strategies of the regulator and the
+monopolist it is necessary to find the envelope conditions in
+addition to the first-order condition. These are found by
+differentiating the Bellman value function with respect to the
+strategies:
+\begin{align}
+    W^t_1 &= w^t_1 + g^t_1 \bigl( w^t_2 + w^t_3 g^{t+1}_1 + \delta
+    W^{t+1}_1 \bigr) + f^t_1 \bigl( w^t_3 g^{t+1}_2 + \delta
+    W^{t+1}_2 \bigr) \\
+    W^t_2 &= g^t_2 \bigl( w^t_2 + w^t_3 g^{t+1}_1 + \delta W^{t+1}_1
+    \bigr) + f^t_2 \bigl( w^t_3 g^{t+1}_2 + \delta
+    W^{t+1}_2 \bigr)
+\end{align}
+Since we know from the first order condition, \eqref{reg:foc}, that
+$w^t_3 g^{t+1}_2 + \delta W^{t+1}_2 = 0$ in optimality it follows
+that the envelope conditions for the regulator's optimal strategy
+are
+\begin{align}
+    W^t_1 &= w^t_1 + g^t_1 \bigl( w^t_2 + w^t_3 g^{t+1}_1 + \delta
+    W^{t+1}_1 \bigr)    \label{reg:envelope1} \\
+    W^t_2 &= g^t_2 \bigl( w^t_2 + w^t_3 g^{t+1}_1 + \delta W^{t+1}_1
+    \bigr).     \label{reg:envelope2}
+\end{align}
+From these conditions and the first order conditions it is possible
+to solve for the Euler-Lagrange equations  by eliminating the
+unknown Bellman value functions. First substituting
+\eqref{reg:Bellval} into \eqref{reg:envelope2} gives
+\begin{align}
+    -\frac{w^{t-1}_3 g^t_2}{\delta} &= g^t_2 \bigl( w^t_2 + w^t_3 g^{t+1}_1 + \delta W^{t+1}_1
+    \bigr) \\
+    \intertext{which simplifies to}
+    W^{t+1}_1 &= -\frac{w^{t-1}_3 + \delta \bigl( w^t_2 + w^t_3 g^{t+1}_1 \bigr) }{\delta^2}
+    \label{reg:dWt+1dpt}
+\end{align}
+Now substituting \eqref{reg:dWt+1dpt} into \eqref{reg:envelope1} to
+eliminate the unknown Bellman value function derivative gives
+\begin{multline}
+    -\frac{w^{t-2}_3 + \delta \bigl( w^{t-1}_2 + w^{t-1}_3 g^t_1 \bigr) }{\delta^2} = w^t_1 \\
+    + g^t_1 \Biggl( w^t_2 + w^t_3 g^{t+1}_1 + \delta
+    \biggl(-\frac{w^{t-1}_3 + \delta \bigl( w^t_2 + w^t_3 g^{t+1}_1 \bigr) }{\delta^2} \biggr) \Biggr)
+\end{multline}
+which, shifted forward two period, simplifies to give equation
+\eqref{reg:euler}.
+
+\subsubsection{The monopolist's necessary condition} The first order
+condition for the monopolist is derived by differentiating the
+monopolist's Bellman equation with respect to $p^t$ and setting it
+equal to zero.
+\begin{equation}    \label{mon:foc}
+    \del{\Pi^t}{p^t} = \pi^t_2 + \pi^t_3 g^t_1 + \delta \Pi^{t+1}_1
+    = 0
+\end{equation}
+The Bellman value function for the monopolist can then be
+characterised by the equation
+\begin{equation}    \label{mon:Bellval}
+    \Pi^{t+1}_1 = - \frac{\pi^t_2 + \pi^t_3 g^t_1}{\delta}
+\end{equation}
+Now finding the envelope conditions for the monopolist as was done
+for the regulator:
+\begin{align}
+    \Pi^t_1 &= \pi^t_1 + g^t_1 \bigl( \pi^t_2 + \pi^t_3 g^{t+1}_1 + \delta \Pi^{t+1}_1 \bigr)
+    + f^t_1 \bigl( \pi^t_3 g^{t+1}_2  + \pi^t_4 + \delta \Pi^{t+1}_2
+    \bigr) \\
+    \Pi^t_2 &= g^t_2 \bigl( \pi^t_2  + \pi^t_3 g^{t+1}_1 + \delta \Pi^{t+1}_1
+    \bigr)
+    + f^t_2 \bigl( \pi^t_3 g^{t+1}_2 + \pi^t_4 + \delta \Pi^{t+1}_2
+    \bigr)
+\end{align}
+From the first order condition, \eqref{mon:foc}, $\pi^t_2 + \pi^t_3
+g^t_1 + \delta \Pi^{t+1}_1 = 0$ and, hence, the envelope conditions
+for this problem are:
+\begin{align}
+    \Pi^t_1 &= \pi^t_1 + f^t_1 \bigl( \pi^t_3 g^{t+1}_2  + \pi^t_4 + \delta \Pi^{t+1}_2
+    \bigr)  \label{mon:envelope1}\\
+    \Pi^t_2 &= f^t_2 \bigl( \pi^t_3 g^{t+1}_2 + \pi^t_4 + \delta \Pi^{t+1}_2
+    \bigr)  \label{mon:envelope2}
+\end{align}
+Now to solve, first substitute \eqref{mon:Bellval} into
+\eqref{mon:envelope1} to give
+\begin{equation}
+    - \frac{\pi^{t-1}_2 + \pi^{t-1}_3 g^{t-1}_1}{\delta} = \pi^t_1 + f^t_1 \bigl( \pi^t_3 g^{t+1}_2  + \pi^t_4 + \delta
+    \Pi^{t+1}_2 \bigr)
+\end{equation}
+which rearranges to
+\begin{equation}    \label{mon:dPidtaut}
+    \Pi^{t+1}_2 = - \frac{\pi^{t-1}_2 + \pi^{t-1}_3 g^{t-1}_1 + \delta \pi^t_1}{\delta^2 f^t_1}
+    - \frac{\pi^t_3 g^{t+1}_2 + \pi^t_4}{\delta}.
+\end{equation}
+Now substituting \eqref{mon:dPidtaut} into \eqref{mon:envelope2}
+eliminates the unknown Bellman value function derivative:
+\begin{multline}
+    - \frac{\pi^{t-2}_2 + \pi^{t-2}_3 g^{t-2}_1 + \delta \pi^{t-1}_1}{\delta^2 f^{t-1}_1}
+    - \frac{\pi^{t-1}_3 g^t_2 + \pi^{t-1}_4}{\delta}  \\ =
+    - f^t_2 \frac{\pi^{t-1}_2 + \pi^{t-1}_3 g^{t-1}_1 + \delta
+\pi^t_1}{\delta f^t_1}
+\end{multline}
+This, shifted forward two periods, simplifies to give equation
+\eqref{mon:euler}.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:

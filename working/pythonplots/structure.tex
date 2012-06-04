@@ -1,0 +1,87 @@
+\documentclass{amsart}
+
+\title{Structure of Python programme for data analysis and graph construction}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Objectives}
+\label{sec:objectives}
+
+\begin{enumerate}
+\item Generate convergence paths from arbitrary starting points across
+  multiple parameter values
+\item Generate welfare, consumer surplus, profit and pollution paths
+  to correspond with the price and tax paths
+\item Create plots of the above. Both scatterplots of the steady
+  states and time series plots of convergence.
+\end{enumerate}
+
+\section{Tasks}
+\label{sec:tasks}
+
+\begin{enumerate}
+\item Define the necessary functions:
+\item
+  \begin{enumerate}
+  \item Strategy functions
+  \item Profit function
+  \item Pollution function
+  \item Consumer surplus function
+  \item Welfare function
+  \end{enumerate}
+\item Initiate the parameter variables
+\item Read in the data and populate the parameter variables
+\item Generate data matrices from the functions defined above
+\item Plot the steady states
+\item Plot the convergence of each function
+\end{enumerate}
+
+\section{Programme structure}
+\label{sec:programme-structure}
+
+\subsection{Files}
+\label{sec:files}
+
+\begin{itemize}
+\item \texttt{jump\_pydata.csv} contains the Maple results in an
+  appropriate matrix
+\item \texttt{jump\_funcs.py} defines the necessary functions to
+  characterise the game
+\item \texttt{jump\_data\_handler.py} reads in the data from
+  \texttt{jump\_pydata.csv} file and generates further matrices using
+  the functions from \texttt{jump\_funcs.py}. The entire data set is
+  then written to a Numpy array for easy import in future
+\item \texttt{jump\_plot.py} reads in the Numpy array created by
+  \texttt{jump\_data\_handler.py} and generates the scatter and times
+  series plots
+\end{itemize}
+
+\subsection{Functions}
+\label{sec:functions}
+
+\begin{description}
+\item[Strategy functions]
+  \begin{align}
+    \label{eq:1}
+    f(p^{t-1},\tau^{t-1}) &= \alpha_r + \gamma_{r1} p^{t-1} +
+    \gamma_{r2} \tau^{t-1}, \\
+    g(p^{t-1},\tau^{t-1}) &= \alpha_m + \gamma_{m1} p^{t-1} +
+    \gamma_{m2} \tau^{t-1}.
+  \end{align}
+\item[Demand function]
+  \begin{equation}
+    \label{eq:2}
+      x^t = p^{t-1} - (\beta+1)p^t + \beta p^{t+1}.
+  \end{equation}
+\item[Production cost]
+
+\item[Pollution function]
+
+\item[Profit function]
+
+
+\end{description}
+
+
+\end{document}

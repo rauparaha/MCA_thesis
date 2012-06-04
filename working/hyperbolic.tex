@@ -1,0 +1,441 @@
+\documentclass{amsart}
+
+\usepackage{amssymb,amsmath}
+
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddel}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}}
+
+\linespread{1.5}
+
+\title{Hyperbolic discounting model} \date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Elements of the model}
+\label{sec:elements-model}
+
+\subsection{Consumer}
+\label{sec:consumer}
+
+Imagine a representative consumer with quasi-linear preferences across
+two goods: a polluting good, $x$, and a numeraire, $y$. The consumer's
+instantaneous utility function is
+\begin{equation}
+  \label{eq:1} u = ax - \frac{b}{2}x^2 + y.
+\end{equation} The consumer's budget constraint is
+\begin{equation}
+  \label{eq:2} p_x x + y = W,
+\end{equation} hence, demand for $x$ is
+\begin{equation}
+  \label{eq:3} x = \frac{a}{b} - \frac{p}{b}
+\end{equation} and inverse demand is
+\begin{equation}
+  \label{eq:4} p = a - bx.
+\end{equation}
+
+\subsection{Monopolist}
+\label{sec:monopolist}
+
+The manufacturer of good $x$ faces costs $cx$ and monopolises the
+market. His instantaneous profit function is
+\begin{equation}
+  \label{eq:5} \pi = ax - bx^2 - cx.
+\end{equation}
+
+\subsection{Regulator}
+\label{sec:regulator}
+
+The regulator recognises the pollution damage, $\phi(k_t)$, caused by
+the existence of the stock, $k_t$, of good $x$. The stock of the good
+evolves according to the rule
+\begin{equation}
+  \label{eq:7} k_t = \theta k^{t-1} + x^{t-1} \qquad \theta \in [0,1].
+\end{equation} Instantaneous welfare is given by
+\begin{align}
+  \label{eq:6} w_t &= \pi_t + CS_t - \phi(k_t) \\ &= \left[ ax - bx^2
+- cx \right] + \left[ \left( a-p_t^* \right) \frac{x_t^*}{2} \right] -
+\phi(k_t),
+\end{align} where the superscripted asterisk denotes the equilibrium
+value of the variable.
+
+Let the pollution function be $\phi(k_t) = dk_t^2$. Now the
+instantaneous welfare function can be written
+\begin{equation}
+  \label{eq:10} w_t = (a-c)x_t - \frac{b}{2}x_t^2 - dk_t^2.
+\end{equation}
+
+The regulator suffers from time inconsistency and is modelled as
+having quasi-hyperbolic preferences with $\beta\delta$-discounting.
+
+\section{Laissez Faire equilibrium}
+\label{sec:laiss-faire-equil}
+
+Suppose that the monopolist acted unregulated. He then solves a static
+problem in each period:
+\begin{align}
+  \label{eq:8} MR &= MC \\ a-2bx &= c \\ x^* &= \frac{a-c}{2b} \\ p^*
+  &= \frac{a+c}{2}.
+\end{align} Thus
+\begin{align}
+  \label{eq:9} CS\left( x^*\right) &= \frac{\left( a-c \right)^2}{8b}
+\\ \intertext{and} \pi\left( x^*\right) &= \frac{\left( a-c
+\right)^2}{4b}.
+\end{align}
+
+In the dynamic, infinite horizon case these profit and CS values will
+be summed to infinity with a discount rate of $\delta$. They will
+simply be multiplied by $\frac{1}{1-\delta}$.Thus
+\begin{align}
+  \label{eq:9} CS\left( x^*\right) &= \frac{\left( a-c \right)^2}{8b}
+\\ \intertext{and} \pi\left( x^*\right) &= \frac{\left( a-c
+\right)^2}{4b}.
+\end{align}
+
+
+\section{Regulation with precommitment}
+\label{sec:regul-with-prec}
+
+Suppose that the regulator can directly choose $\{ x_\tau
+\}_{\tau=t}^\infty$ at time $t$. The regulator must maximise
+\begin{equation}
+  \label{eq:11} W_t = \beta \sum_{i=1}^\infty \delta^i \left[
+(a-c)x_{t+i} - \frac{b}{2}x_{t+i}^2 - dk_{t+i}^2 \right] + \left[
+(a-c)x_t - \frac{b}{2}x_t^2 - dk_t^2 \right]
+\end{equation} where $k_t = \theta k_{t-1} + x_{t-1}$ describes the
+evolution of the state variable, $\delta$ is the discount rate and
+$\beta$ is the quasi-hyperbolic modifier on the future discount rate.
+
+Notating current instantaneous welfare in an abbreviaNotating current instantaneous welfare in an abbreviated fashion as
+$w(x_t,k_t)$ allows the NPV of total future welfare to be written as
+\begin{equation}
+  \label{eq:30} W_0 = w(x_0,k_0) + \beta\delta w(x_1,\theta k_0+x_0) +
+\beta\delta^2 w(x_2,x_1+\theta x_0+\theta^2 k_0) + \ldots
+\end{equation} Maximising this requires taking first-order conditionss
+with respect to $x_t \forall t\in [0,\infty)$. Derivatives are notated
+as usual with the time superscript taken from the time subscript of
+the state variable.
+\begin{align}
+  \label{eq:31} \del{W_0}{x_0} &= w_1^0 + \beta\delta w_2^1 +
+\theta\beta\delta^2 w_2^2 + \ldots = 0 \\ \label{eq:32} \del{W_0}{x_1}
+&=\beta\delta w_1^1 + \theta\beta\delta^2 w_2^2 + \theta\beta\delta^3
+w_2^3 + \ldots = 0 \\ \label{eq:33} \del{W_0}{x_2} &=\beta\delta^2
+w_1^2 + \theta\beta\delta^3 w_2^3 + \theta\beta\delta^4 w_2^4 + \ldots
+= 0 \\ &\hspace{2cm}\vdots
+\end{align} Compacting these conditions,
+\eqref{eq:31}$-$\eqref{eq:32}$\times\theta$ gives
+\begin{equation}
+  \label{eq:34} w^0_1 + \beta\delta \left(w^1_2 - \theta w^1_1 \right)
+= 0,
+\end{equation} and $($\eqref{eq:33}$-$\eqref{eq:34}$\times\theta ) /
+\beta\delta$ gives
+\begin{equation}
+  \label{eq:35} w^t_1 + \delta \left(w^t_2 - \theta w^{t+1}_1 \right)
+= 0 \qquad \forall\; t \geq 2.
+\end{equation}
+ted fashion as
+$w(x_t,k_t)$ allows the NPV of total future welfare to be written as
+\begin{equation}
+  \label{eq:12} W_0 = w(x_0,k_0) + \beta\delta w(x_1,\theta k_0+x_0) +
+\beta\delta^2 w(x_2,x_1+\theta x_0+\theta^2 k_0) + \ldots
+\end{equation} Maximising this requires taking first-order conditionss
+with respect to $x_t \forall t\in [0,\infty)$. Derivatives are notated
+as usual with the time superscript taken from the time subscript of
+the state variable.
+\begin{align}
+  \label{eq:13} \del{W_0}{x_0} &= w_1^0 + \beta\delta w_2^1 +
+\theta\beta\delta^2 w_2^2 + \ldots = 0 \\ \label{eq:14} \del{W_0}{x_1}
+&=\beta\delta w_1^1 + \theta\beta\delta^2 w_2^2 + \theta\beta\delta^3
+w_2^3 + \ldots = 0 \\ \label{eq:15} \del{W_0}{x_2} &=\beta\delta^2
+w_1^2 + \theta\beta\delta^3 w_2^3 + \theta\beta\delta^4 w_2^4 + \ldots
+= 0 \\ &\hspace{2cm}\vdots
+\end{align} Compacting these conditions,
+\eqref{eq:13}$-$\eqref{eq:14}$\times\theta$ gives
+\begin{equation}
+  \label{eq:16} w^0_1 + \beta\delta \left(w^1_2 - \theta w^1_1 \right)
+= 0,
+\end{equation} and $($\eqref{eq:15}$-$\eqref{eq:16}$\times\theta ) /
+\beta\delta$ gives
+\begin{equation}
+  \label{eq:17} w^t_1 + \delta \left(w^t_2 - \theta w^{t+1}_1 \right)
+= 0 \qquad \forall\; t \geq 2.
+\end{equation}
+
+
+\section{Regulation without precommitment}
+\label{sec:regul-with-prec-2}
+
+Now suppose that the regulator can still directly choose output but is
+no longer able to precommit to future output decisions. The problem
+must be formulated recursively in order to solve for a time consistent
+output path.
+
+The problem will first be solved with reduced form notation and then
+functional forms can later be substituted in.
+
+Let the MPE strategy of the regulator be $x_t = f(k_t)$. Then his
+current period value function is
+\begin{equation}
+  \label{eq:18} U(k_t) = \max_{x_t} \left\{ w(x_t,k_t) + \beta\delta
+V( \theta k_t + x_t) \right\}.
+\end{equation} From period $t+1$ onward the value function is
+$V(k_t)$.
+\begin{equation}
+  \label{eq:19} V(k_t) = w\left( f(k_t),k_t\right) + \delta V\left(
+\theta k_t + f(k_t) \right).
+\end{equation}
+
+The current period's FOC is
+\begin{align} w^t_1 + \beta\delta V^{t+1}_1 &= 0 \\ \label{eq:20}
+\therefore V^{t+1}_1 &= -\frac{w^t_1}{\beta\delta}.
+\end{align} Differentiating \eqref{eq:19} gives
+\begin{equation}
+  \label{eq:21} V^t_1 = w^t_1f^t_1 + w^t_2 + \delta V^{t+1}_1 (\theta
+f^t_1)
+\end{equation} and substituting in equation \eqref{eq:20} gives the
+reduced form Euler-Lagrange equation:
+\begin{equation}
+  \label{eq:22} w^t_1 + \beta\delta( w^{t+1}_1 f^{t+1}_1 + w^{t+1}_2 )
+- \delta (\theta + f^{t+1}_1)w^{t+1}_1 = 0.
+\end{equation}
+
+\section{Regulation with delegation}
+\label{sec:regul-with-deleg}
+
+The delegation game involves the regulator setting a tax rate for
+pollution simultaneously with the monopolist's choice of output in
+each period. Both the tax and the choice of output are feedback
+strategies. We consider only a linear tax, however there are two
+possible ways to levy it. It can be levied on either emissions or upon
+the stock of pollution.
+
+The case of a tax on emissions will be considered first and then the
+problem with a pollution tax will be solved.
+
+\subsection{The welfare function}
+\label{sec:welfare-function}
+
+The regulator's problem changes for two reasons: first, because he
+gains revenue from taxation and, secondly, because we introduce a cost
+to changing the tax rate. Economists are often criticised by
+policymakers for excluding the costs of implementation when they
+recommend taxes. Here, we explicitly include the costs of implementing
+and modifying tax schemes in the regulator's welfare function.
+
+Suppose that the tax is levied on emissions, the value of the tax
+revenue to the regulator is $\gamma$, and the the cost of changing
+policies is $\kappa (\tau_t-\tau_{t-1})^2$, where $\tau_t$ is the
+period $t$ tax rate. Then the welfare function becomes
+\begin{align}
+  \label{eq:23} w_t &= (a-c)x_t - bx_t^2 + (\gamma -1)\tau_tx_t +
+(a-p^*)\frac{x_t^*}{2} - dk_t^2 - \kappa (\tau_t-\tau_{t-1})^2 \\ &=
+\omega(x_t,k_t) + (\gamma -1)\tau_tx_t - \kappa \rho(\tau_t,\tau_{t-1}).
+\end{align} Note that, if $\gamma=1$ then the tax is a simple transfer
+from the monopolist to the consumers and doesn't directly affect the
+welfare function. Similarly, if $\kappa=0$ then there are no costs of
+policy adjustment.
+
+\subsection{The profit function}
+\label{sec:profit-function}
+
+With taxation the monopolist's instantaneous profit becomes
+\begin{equation}
+  \label{eq:24} \pi_t = (a-c-\tau_t)x_t - bx_t^2.
+\end{equation}
+
+\subsection{The game}
+\label{sec:game}
+
+Let the MPE strategy of the monopolist be $x_t = h(\tau_{t-1},k_t)$
+and the MPE strategy of the regulator be $\tau_t = g(\tau_{t-1},k_t)$.
+
+\subsubsection{Regulator}
+\label{sec:regulator-1}
+
+Current period value function:
+\begin{multline}
+  \label{eq:25} U(\tau_{t-1},k_t) = \max_{\tau_t} \bigg\{ \omega\big(
+h(\tau_{t-1},k_t),k_t\big) + (\gamma -1)\tau_tx_t - \kappa \rho(\tau_t,\tau_{t-1}) \\ + \beta\delta V \big(
+\tau_t, \theta k_t + h(\tau_{t-1},k_t)\big) \bigg\}.
+\end{multline} Continuation value function:
+\begin{multline}
+  \label{eq:26} V(\tau_{t-1},k_t) = \omega\left(
+h(\tau_{t-1},k_t),k_t\right)  + (\gamma -1)g(\tau_{t-1},k_t)x_t
+- \kappa \rho(\tau_t,\tau_{t-1}) \\+
+\delta V \left( g(\tau_{t-1},k_t), \theta k_t +
+h(\tau_{t-1},k_t)\right).
+\end{multline} FOC:
+\begin{align}
+  (\gamma-1)x_t + \kappa\rho^t_1 + \beta\delta V^{t+1}_1 &= 0 \\ \label{eq:27}
+  V^{t+1}_1 &= -\frac{(\gamma-1)x_t + \kappa\rho^t_1}{\beta\delta}.
+\end{align} Envelope conditions from \eqref{eq:26}:
+\begin{align}
+  \label{eq:28} V^t_1 &= \omega^t_1h^t_1 + (\gamma-1)x_tg^t_1 - \kappa\rho^t_2 + \delta
+V^{t+1}_1g^t_1 + \delta V^{t+1}_2h^t_1 \\ \label{eq:29} V^t_2 &= \omega^t_2 +
+\omega^t_1h^t_2 + (\gamma-1)x_tg^t_2 + \delta V^{t+1}_1g^t_2 + \delta
+V^{t+1}_2 (\theta + h^t_2).
+\end{align} Solving for the Euler-Lagrange equation: \eqref{eq:27}
+$\rightarrow$ \eqref{eq:28} gives
+\begin{gather}
+  \label{eq:30} \omega^t_1h^t_1 + (\gamma-1)x_tg^t_1 -\kappa\rho^t_2 +
+  \delta \left(
+    V^{t+1}_2h^t_1 - g^t_1\frac{(\gamma-1)x_t + \kappa\rho^t_1}{\beta\delta} \right) + \frac{(\gamma-1)x_{t-1} + \kappa\rho^{t-1}_1}{\beta\delta} = 0 \\
+  \label{eq:31} \therefore V^{t+1}_2 = \frac{g^t_1 ( \kappa \rho^t_1
+    + (\gamma-1)x_t)}{\beta\delta h^t_1} - \frac{\kappa\rho^{t-1}_1 +
+    (\gamma-1)x_{t-1}}{\beta\delta h^t_1} + \frac{\kappa\rho^t_2 -
+    (\gamma-1)x_tg^t_1}{\delta h^t_1} - \frac{\omega^t_1}{\delta}.
+\end{gather} Now \eqref{eq:27},~\eqref{eq:31}
+$\rightarrow$~\eqref{eq:29} gives the result
+\begin{multline}
+  \label{eq:32}
+  h_1^t \kappa \rho_2^{t-1} \beta \delta- h_1^t \omega_1^{t-1}
+  h_1^{t-1} \beta \delta- h_1^t g_1^{t-1} \delta x^{t-1}+ h_1^t
+  x^{t-2}\\-\delta h_1^{t-1} h_2^t \kappa \rho_1^{t-1}- \delta ^2
+  h_1^{t-1} \kappa \rho_2^t \beta \theta-{ \delta}^2 h_1^{t-1} h_2^t
+  \kappa \rho_2^t \beta+ \delta ^{ 2} h_1^{t-1} h_2^t g_1^t x^t\\ +
+  h_1^t g_1^{t-1} x^{t-1} \beta \delta- \delta ^2 h_1^{t-1} h_2^t
+  g_1^t x^t \beta+ \delta ^2 h_1^{t-1} g_1^t \kappa \rho_1^t \theta+
+  \delta ^2 h_1^{t-1} h_2^t g_1^t \kappa \rho_1^t + \delta ^2
+  h_1^{t-1} g_1^t x^t \theta\\+ \delta ^2 h_1^{t-1} g_1^t x^t \beta
+  \gamma h_2^t- \delta ^2 h_1^{t-1} g_1^t x^t \gamma h_2^t- h_1^t
+  g_1^{t-1} x^{t-1} \beta \delta \gamma+ h_1^t \kappa \rho_1^{t-2}-
+  h_1^t g_1^{t-1} \delta \kappa \rho_1^{t-1}\\+ g_2^t h_1^t {
+    \delta}^2 h_1^{t-1} x^t \gamma- x^t g_2^t \beta h_1^t \delta ^2
+  h_1^{t-1} \gamma+\delta h_1^{t-1} x^{t-1} \gamma \theta+\delta
+  h_1^{t-1} x^{t-1} \gamma h_2^t- \delta ^2 h_1^{t-1} g_1^t x^t \gamma
+  \theta\\+ \delta ^2 h_1^{t-1} g_1^t x^t \beta \gamma \theta+ h_1^t
+  g_1^{t-1} \delta x^{t-1} \gamma- g_2^t h_1^t \delta ^2 h_1^{t-1}
+  \kappa \rho_1^t- \omega_2^t \beta h_1^t \delta ^2 h_1^{t-1}+ x^t
+  g_2^t \beta h_1^t \delta ^2 h_1^{t-1}\\- \delta h_1^{t-1} \kappa
+  \rho_1^{t-1} \theta- g_2^t h_1^t { \delta}^2 h_1^{t-1} x^t + \delta
+  ^2 h_1^{t-1} \omega_1^t h_1^t \beta \theta- \delta ^2 h_1^{t-1}
+  g_1^t x^t \beta \theta-\delta h_1^{t-1} h_2^t x^{t-1}\\-\delta
+  h_1^{t-1} x^{t-1} \theta- h_1^t x^{t-2} \gamma{\beta h_1^t {\delta
+    }^2 h_1^{t-1}} = 0
+\end{multline}
+Note that, if $\gamma=1, \kappa=0$ then this simplifies to
+\begin{equation}
+\label{eq:48}
+something
+\end{equation}
+
+
+\subsubsection{Monopolist}
+\label{sec:monopolist-1}
+
+Since the monopolist discounts exponentially, he has a stationary
+value function:
+\begin{equation}
+  \label{eq:33}
+  \Pi(\tau_{t-1},k_t) = \max_{x_t} \left\{
+    \pi(x_t,g\left(\tau_{t-1},k_t)\right) + \delta \Pi \left(
+      g(\tau_{t-1},k_t), \theta k_t + x_t \right) \right\}.
+\end{equation}
+FOC:
+\begin{align}
+  \pi^t_1 + \delta \Pi^{t+1}_2 &= 0 \\  \label{eq:34}
+  \therefore \Pi^{t+1}_2 &= -\frac{\pi^t_1}\delta.
+\end{align}
+Envelope conditions:
+\begin{align}
+  \label{eq:35}
+  \Pi^t_1 &= \pi^t_2g^t_1 + \delta \Pi^{t+1}_1g^t_1 \\\label{eq:36}
+  \Pi^t_2 &= \pi^t_2g^t_2 + \delta \Pi^{t+1}_1g^t_2 + \theta\delta\Pi^{t+1}_2.
+\end{align}
+Solving for the Euler equation:
+\eqref{eq:34}$\to$\eqref{eq:36} gives
+\begin{align}
+  \label{eq:37}
+  -\frac{\pi^{t-1}_1}\delta &= \pi^t_2g^t_2 - \theta\pi^t_1 + \delta
+  \Pi^{t+1}_1g^t_2 \\\label{eq:38}
+  \Pi^{t+1}_1 &= \frac{\theta\pi^t_1 - \pi^t_2g^t_2 -
+    \frac{1}\delta\pi^{t-1}_1}{\delta g^t_2}.
+\end{align}
+Now, (\ref{eq:38})$\rightarrow$(\ref{eq:35}) yields the Euler-Lagrange
+equation:
+\begin{equation}
+  \label{eq:39}
+  \pi^t_2g^t_1 + \frac{g^t_1}{g^t_2} \left( \theta \pi^t_1 -
+    \pi^t_2g^t_2 - \frac{1}\delta\pi^{t-1}_1 \right) -
+  \frac{\theta\pi^{t-1}_1 - \pi^{t-1}_2g^{t-1}_2 -
+    \frac{1}\delta\pi^{t-2}_1}{\delta g^{t-1}_2} = 0
+\end{equation}
+
+
+\subsection{Taxation of the pollution stock}
+\label{sec:taxat-pollut-stock}
+
+\subsubsection{Regulator}
+\label{sec:regulator-2}
+
+The instantaneous welfare function becomes
+\begin{align}
+  \label{eq:47}
+  w_t &= (a-c)x_t - bx_t^2 + (\gamma -1)\tau_tk_t +
+  (a-p^*)\frac{x_t^*}{2} - dk_t - \kappa (\tau_t-\tau_{t-1})^2 \\ &=
+  w(x_t,\tau_t,\tau_{t-1},k_t).
+\end{align}
+Since the reduced form of the welfare function is the same, the
+reduced form Euler equation wil be the same as equation (\ref{eq:32}).
+
+
+\subsubsection{Monopolist}
+\label{sec:monopolist-2}
+
+The instantaneous profit function becomes
+\begin{align}
+  \label{eq:40}
+  \pi_t &= (a-c)x_t - bx_t^2 - \tau_tk_t \\
+  &= \pi(x_t,\tau_t,k_t).
+\end{align}
+The Bellman function is then
+\begin{equation}
+  \label{eq:41}
+  \Pi(\tau_{t-1},k_t) = \max_{x_t} \left\{ \pi\left(
+      x_t,g(\tau_{t-1},k_t),k_t\right) + \delta \Pi \left(
+      g(\tau_{t-1},k_t), \theta k_t + x_t \right) \right\}.
+\end{equation}
+FOC:
+\begin{equation}
+  \label{eq:42}
+  \Pi^{t+1}_2 = -\frac{\pi^t_1}\delta.
+\end{equation}
+Envelope conditions:
+\begin{align}
+  \label{eq:43}
+  \Pi^t_1 &= \pi^t_2g^t_1 + \delta \Pi^{t+1}_1g^t_1 \\ \label{eq:45}
+  \Pi^t_2 &= \pi^t_2g^t_2 + \pi^t_3 + \delta \Pi^{t+1}_1g^t_2 + \delta
+  \theta \Pi^{t+1}_2.
+\end{align}
+Solving for the Euler equation:
+(\ref{eq:42})$\rightarrow$~(\ref{eq:45}) rearranges to
+\begin{equation}
+  \label{eq:44}
+  \Pi^{t+1}_1 = \frac{\theta \pi^t_1 - \pi^t_3 - \pi^t_2g^t_2 -
+    \frac{1}\delta\pi^{t-1}_1}{\delta g^t_2}
+\end{equation}
+and then substituting (\ref{eq:44}) into (\ref{eq:43}) gives the
+Euler-Lagrange equation:
+\begin{multline}
+  \label{eq:46}
+  \pi^t_2g^t_1 + \frac{g^t_1}{g^t_2} \left( \theta \pi^t_1 -
+    \pi^t_2g^t_2 - \pi^t_3 - \frac{1}\delta\pi^{t-1}_1 \right) \\ -
+  \frac{\theta\pi^{t-1}_1 - \pi^{t-1}_2g^{t-1}_2 - \pi^t_3 -
+    \frac{1}\delta\pi^{t-2}_1}{\delta g^{t-1}_2} = 0
+\end{multline}
+
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

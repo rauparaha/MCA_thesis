@@ -1,0 +1,589 @@
+\chapter{Problem}
+
+\label{cha:problem} % \textit{To do in this section:}
+%   \begin{itemize}
+%     \item \textit{Point out that inconsistency in the profit function
+%       of the firm doesn't necessarily translate into inconsistency in
+%       the regulator's welfare function. It may be that the
+%       inconsistency is in the demand function and just appears in the
+%       welfare function as a transfer between consumers and
+%       firms. However, in the case of the durable goods monopoly, the
+%       consumer surplus function is also a function of the jump
+%       variable and so the regulator's welfare function is certain to
+%       be inconsistent.}
+%   \item \textit{Add a section talking about the Coase Conjecture and
+%       why it doesn't apply here.}
+%     \end{itemize}
+
+The problem of regulating a dynamically inconsistent polluter is
+complicated: a regulator seeking to maximise social welfare will have to
+take into account the dynamic structure of consumer demand for the
+polluter's product. This implies that instantaneous welfare will contain a
+jump variable and hence the polluter's time consistency problem will be
+transferred to the regulator. In the absence of precommitment devices a
+regulator faced with a dynamically inconsistent polluter may be unable to
+attain the first-best outcome. A likely consequence of this failure is
+over-pollution.
+
+This chapter presents a model of a polluting durable goods monopoly and
+shows how its regulation may be subject to time inconsistency. We will
+characterise both the first-best (precommitment) and the second-best
+(time-consistent) regulatory outcomes. They will then be used as benchmarks
+for the proposed taxation mechanism in the next chapter.
+
+\section{A model of a dynamically inconsistent regulator}
+
+\label{sec:model-dynam-incons} In each situation described in section \ref%
+{sec:industr-which-dynam}, a regulator will be affected by the dynamic
+inconsistency of the regulated firm. In this chapter we set up a model to
+illustrate the problem. We will focus on the specific case of a durable
+goods producer, which will serve to illustrate how our proposal can overcome
+the regulatory problems induced by jump states.
+
+In this section we elucidate the model and describe the players' decisions
+and interactions. The main decision makers are a regulator and a monopolist
+who supplies an infinitely durable good to a mass of consumers. We consider
+a durable goods producer because their behaviour is known to produce dynamic
+inconsistency (see section \ref{sec:durable-goods}).
+
+\subsection{The consumption decision}
+
+\label{sec:consumption-decision}
+
+The monopolist produces an infinitely durable good, which is then supplied
+to a mass of consumers. For simplicity this mass is normalised to $1$. The
+period-$t$\ price is denoted by $p^{t}$. Each consumer can buy only one unit
+of the good in their lifetime. \ After the purchase they withdraw from the
+market, but continue to enjoy a stream of benefits $v\in \lbrack 0,1]$\ in
+perpetuity. Future benefits are discounted by a factor $\beta $.\footnote{%
+The parameter $\beta $  can also capture depreciation of the benefits of the
+durable good.}
+
+The taste parameter, $v$, indicates an individual consumer's valuation of
+the good. Consumers are assumed to have heterogeneous valuations and their
+tastes are distributed across the population according to a probability
+density function $\phi (v)$, which has a corresponding cumulative density
+function (CDF) denoted by $\Phi (v)$.
+
+\subsubsection{Price trajectory}
+
+\label{sec:price-trajectory}
+
+Consumers decide the timing of their purchases. Those who are most eager
+will be willing to pay a premium to buy the good early on. Hence, initially
+the price of the good will be high. As the early adopters leave the market
+the price of the good will be reduced in order to entice the remaining
+consumers to make a purchase. Consequently, the equilibrium price path will
+be decreasing over time.
+
+It must be noted that it may not be optimal for the monopolist to operate in
+all periods. As Stokey originally showed, a monopolist with constant
+marginal costs and precommitment power will choose to produce only in the
+first period \citep{Coase1972, Stokey1981}. Two key features of the model
+studied here distinguish it from Stokey's:
+
+\begin{enumerate}
+\item the monopolist does not have precommitment power; and,
+
+\item the monopolist has convex costs (assumption \ref{dur:ass2}).
+\end{enumerate}
+
+As shown by \citet{Kahn1986}, the presence of either of these properties
+invalidates Stokey's result. Convexity of costs implies that higher
+production will increase marginal costs, and thus it induces the monopolist
+to smooth production over time costs. Kahn shows that, in an infinite
+horizon setting, the monopolist's production smoothing will cause them to
+asymptotically approach a steady-state price. Thus, the good's price
+sequence is Cauchy and converges to a limit (i.e. a steady state price) as $%
+t\rightarrow \infty $: 
+\begin{equation}
+p^{t-1}-p^{t}\geq p^{t}-p^{t+1}\quad \forall \;t  \label{eq:1}
+\end{equation}%
+This\ dynamic stability condition constrains the price trajectory in the
+market under consideration.
+
+\subsubsection{Consumers' intertemporal trade-offs}
+
+\label{sec:intert-trade-offs}
+
+In a durable goods market the consumer's main decision is when to purchase.
+Knowing that the price will decline over time, they weigh the benefit of
+purchasing in the current period against the expected price reduction of the
+subsequent period. If the expected cost reduction from waiting until the
+next period outweighs the foregone $v$, they will delay purchase.
+
+The lifetime net benefit, $V^{t}$, of purchasing in period-$t$ is the net
+present value of the stream of discounted benefits, minus the cost of
+purchase: 
+\begin{equation}
+V^{t}=\frac{v}{1-\beta }-p^{t}.  \label{eq:2}
+\end{equation}
+Similarly, 
+\begin{equation}  \label{eq:3}
+V^{t+1}=\frac{\beta v}{1-\beta }-\beta p_{e}^{t+1},
+\end{equation}
+where $p_{e}^{t+1}$ is the anticipated future price. Thus, purchase will be
+delayed in period-$t$ if 
+\begin{gather}
+V^{t+1}>V^{t}  \label{eq:4} \\
+v<p^{t}-\beta p_{e}^{t+1}.
+\end{gather}
+
+By shifting equations \eqref{eq:3} and \eqref{eq:2} back one period and
+performing a similar rearrangement, one finds that purchase will be delayed
+in period-$t-1$ if 
+\begin{equation}
+v<p^{t-1}-\beta p^{t}.  \label{eq:5}
+\end{equation}
+
+Suppose that consumers have rational expectations: $p_{e}^{t+1}=p^{t}$. Then
+a consumer who chooses not to delay purchase in the current period will
+never prefer to consume in a later period. This can be seen by combining
+equation \eqref{eq:1} with $\beta <1$ and shifting it forward one period to
+give $p^{t}-p^{t+1}>\beta (p^{t+1}-p^{t+2})$, which rearranges to 
+\begin{equation}
+p^{t}-\beta p^{t+1}>p^{t+1}-\beta p^{t+2}.  \label{eq:6}
+\end{equation}%
+Equation \eqref{eq:4} implies that all consumers who choose to buy in the
+current period have tastes such that $v\geq p^{t}-\beta p_{e}^{t+1}$. Hence, 
+\begin{equation}
+v\geq p^{t}-\beta p^{t+1}>p^{t+1}-\beta p^{t+2}>\ldots >p^{T-1}-\beta
+p^{T},\quad \forall T>t,  \label{eq:7}
+\end{equation}%
+and each consumer who buys the good in period-$t$ will be worse off delaying
+the purchase to any future period.
+
+\subsubsection{The demand function}
+
+\label{sec:demand-function}
+
+The above discussion of consumer behaviour enables us to obtain the demand
+function for a given period $t$. Current demand is the mass of people who
+chose to delay purchase in the previous period but choose not to delay from
+the current period to the next. Combining the equations describing consumer
+choice with the CDF of $v$ gives us the mass of consumers who purchase in
+period $t$. The resulting demand is 
+\begin{equation}
+x^{t}=x(p^{t-1},p^{t},p_{e}^{t})=\Biggl\{%
+\begin{array}{lcl}
+\Phi (p^{t-1}-\beta p^{t})-\Phi (p^{t}-\beta p_{e}^{t+1}) & \mbox{if} & t>0,
+\\ 
+1-\Phi (p^{0}-\beta p^{1}) & \mbox{if} & t=0.%
+\end{array}
+\label{eq:demand}
+\end{equation}%
+Since the function $\Phi (\cdot )$\ is a CDF, it must increasing. Equation %
+\eqref{eq:6} implies that $\Phi (p^{t-1}-\beta p^{t})>\Phi (p^{t}-\beta
+p_{e}^{t+1})$, so demand will be positive in all periods. Furthermore, we
+need the demand function to be concave in both the current and future
+prices. This, along with Assumption \ref{dur:ass2}, will guarantee the
+concavity of profits.
+
+\begin{ass} \label{dur:ass1}
+  The demand function function, $x^t$,
+  satisfies $\ddel{x^t}{(p^t)} \leq 0$, $\ddel{x^t}{(p^{t+1}_e)} \leq
+  0$.
+\end{ass}
+
+\subsection{The production decision}
+
+\label{sec:production-decision}
+
+Suppose that the monopolist incurs operating costs $C(x^{t})$. Thus, his
+profit function is 
+\begin{equation}
+\pi ^{t}=\pi
+(p^{t-1},p^{t},p_{e}^{t+1})=p^{t}x(p^{t-1},p^{t},p_{e}^{t+1})-C\left(
+x(p^{t-1},p^{t},p_{e}^{t+1})\right) .  \label{dur:profit}
+\end{equation}%
+To ensure concavity of instantaneous profits, it is necessary to assume
+convexity of the cost function. As discussed above, this also implies that a
+monopolist who is able to precommit will not cease production after the
+first period \citep{Kahn1986}. 
+\begin{ass} \label{dur:ass2}
+The monopolist's cost function satisfies  $C''(x^t) > 0$.
+\end{ass}Along with Assumption \ref{dur:ass1} this assumption guarantees
+that profits will be concave in both the present price and next period's
+price: $\ddel{\pi^t}{(p^t)}\leq 0$, $\ddel{\pi^t}{(p^{t+1}_e)}\leq 0$. See
+Appendix \ref{cha:Assumpproof} for a proof.
+
+\subsection{The regulator's decision}
+
+\label{sec:regulators-decision}
+
+We assume that the regulator seeks to maximise social welfare. They take in
+to account the monopolist's profit, the consumer surplus, and potential
+externalities arising from production. In the partial equilibrium model
+studied here, the consumer surplus considered is solely the net benefit
+gained by consumers from purchasing the monopolist's good. The partial
+equilibrium nature of this model makes it difficult to speak accurately of
+welfare but we use it as a convenient approximation, having noted that this
+is not a true welfare analysis. Consumer surplus is given by 
+\begin{align}
+CS^{t}& =CS(p^{t-1},p^{t},p_{e}^{t+1}) \\
+& =\int_{p^{t}-\beta p_{e}^{t+1}}^{p^{t-1}-\beta p^{t}}\phi
+(v)(v-p^{t})\;dv+\int_{p^{t-1}-\beta p^{t}}^{1}\phi (v)v\;dv  \label{eq:8} \\
+& =E(v-p^{t}|p^{t}-\beta p_{e}^{t+1}\leq v<p^{t-1}-\beta p^{t})+E(v|v\geq
+p^{t-1}-\beta p^{t}).
+\end{align}
+
+In addition to consumer surplus and profits, the regulator must also
+consider the environmental impact of pollution generated by production. \
+Our setting assumes that pollution is a flow, rather than a stock,
+externality. That is, instead of modelling pollution as a stock of harm that
+accumulates over time, we consider harm that is caused by the polluter's
+current production. In other words, we assume that the level of emissions is
+an increasing function, $\psi (x^{t})$, of current output. Specifically, the
+pollution function satisfies the following condition. 
+\begin{ass} \label{dur:ass3} The pollution function satisfies
+  $\psi'(x^t) > 0$ and has the initial condition $\psi(0) = 0$.
+\end{ass}
+
+Such an assumption is plausible for some, but not all, types of pollution.
+For example, air pollution is quickly dispersed and may have little time to
+accumulate. Thus, it can be reasonably modelled as a flow externality. Heavy
+metals, however, can accumulate in the soil and eventually reach harmful
+levels. It would be more suitable to consider them as stock pollutants.
+Either approach is valid for a subset of pollution problems. We have chosen
+flow pollution because the framework facilitates simple analysis of time
+inconsistent regulation.
+
+Our assumptions yield the following instantaneous welfare function: 
+\begin{align}
+w^{t}& =w(p^{t-1},p^{t},p_{e}^{t+1})  \label{dur:welfare1} \\
+& =CS(p^{t-1},p^{t},p_{e}^{t+1})+\pi (p^{t-1},p^{t},p_{e}^{t+1})-\psi \left(
+x(p^{t-1},p^{t},p_{e}^{t+1})\right) \\
+& =\int_{p^{t}-\beta p_{e}^{t+1}}^{1}\phi
+(v)v\;dv-C(x(p^{t-1},p^{t},p_{e}^{t+1}))-\psi (x(p^{t-1},p^{t},p_{e}^{t+1})).
+\end{align}
+Given rational expectations ($p_{e}^{t+1}=p^{t}$), the above definition
+implies the presence of a jump variable in the regulator's objective
+function. As argued in section \ref{sec:suff-cond-time} this may cause a
+time consistency problem for the regulator.
+
+\section{Laissez-faire performance}
+
+\label{sec:laiss-faire-perf}
+
+Having described the agents in the market and their interactions, we now
+turn to the topic of efficiency. It could be that this market is already
+efficient. It is also possible that the regulator may not be able to improve
+on the free market outcome. The first step in assessing any government
+intervention is to characterise the performance of the unregulated market.
+Then in section \ref{sec:second-best-price} we will compare the laissez
+faire outcome to the regulator's benchmark pricing policies.
+
+\subsection{The monopolist's price path}
+
+\label{sec:monop-price-path}
+
+As already established, the monopolist's demand function is 
+\begin{equation}
+x^{t}=\Phi (p^{t-1}-\beta p^{t})-\Phi (p^{t}-\beta p_{e}^{t+1})\text{.}
+\end{equation}%
+It generates the following instantaneous profit function: 
+\begin{multline}
+\pi (p^{t-1},p^{t},p_{e}^{t+1})=p^{t}\left[ \Phi (p^{t-1}-\beta p^{t})-\Phi
+(p^{t}-\beta p_{e}^{t+1})\right]  \\
+-C\left( \Phi (p^{t-1}-\beta p^{t})-\Phi (p^{t}-\beta p_{e}^{t+1})\right) .
+\label{eq:9}
+\end{multline}%
+The monopolist's objective is maximization of lifetime profits. Suppose that
+his discount factor is $\delta $. To get an interior equilibrium, we assume
+that $\beta <\delta <1$.
+
+The presence of a jump state, $p_{e}^{t+1}$, suggests that profit
+maximization will give rise to a time inconsistency problem for the
+monopolist. This problem can be conceptualised as a strategic conflict
+between the monopolist's current and future `selves'. We will model the time
+consistent sequence of decisions as the subgame perfect equilibrium outcome
+of a dynamic `intrapersonal' game. This game is played by different agents,
+each a temporal incarnation of the monopolist associated with a particular
+time period. These temporal `selves' choose prices to maximise their payoffs
+while accounting for the discrepancy between their interests and those of
+future agents. In that our agents are `sophisticated' in the sense of %
+\citet{Donoghue2001}.
+
+Our analysis will focus on a particular type of subgame perfect equilibrium.
+Namely, we consider the Markov-perfect equilibrium of the monopolist's
+intrapersonal game. This solution concept restricts the players' strategies
+to be functions of the current state: $p^{t}=g(p^{t-1})$. The Markovian
+approach allows us to use dynamic programming techniques to characterise the
+equilibrium. It assumes away history-dependent punishments with trigger
+strategies.
+
+Furthermore, we need to specify how current agents form expectations about
+the behaviour of future players. \citet{Stokey1981} shows that rational
+expectations are not sufficient to prevent a multiplicity of equilibria
+similar to that of the Folk Theorem. To avoid this multiplicity, we assume
+that decision makers have perfect rational expectations. That is, we require
+expectations of future prices to be correct both on and off the equilibrium
+path. The restriction to Markovian strategies and perfect rational
+expectations imply that $p_{e}^{t+1}=g(p^{t})$.
+
+If the monopolist does not have precommitment power and follows a Markov
+strategy $g(p)$, then his optimal decision rule must solve the Bellman
+equation 
+\begin{equation}
+\Pi (p^{t-1})=\max_{p^{t}}\Bigl\{\pi \bigl(p^{t-1},p^{t},g(p^{t})\bigr)%
++\delta \Pi (p^{t})\Bigr\}.  \label{eq:10}
+\end{equation}%
+This equation recursively defines each player's lifetime payoff, as captured
+by the value function $\Pi (p)$,\ in terms of future players' lifetime
+payoffs. That is, the current player's equilibrium lifetime payoff is\ the
+maximised value of his instantaneous payoff from his decision, plus the
+anticipated continuation payoff of tomorrow's decision. Furthermore, the
+optimal pricing strategy is time invariant, implying that 
+\begin{equation}
+g(p^{t-1})=\arg \max_{p^{t}}\Bigl\{\pi \bigl(p^{t-1},p^{t},g(p^{t})\bigr)%
++\delta \Pi (p^{t})\Bigr\}.  \label{eq:11}
+\end{equation}
+
+In Appendix \ref{cha:equil-durable-goods} we use dynamic programming
+techniques to characterise the Markov-perfect equilibrium. Differentiation
+yields a first-order condition and an envelope condition. Combining these
+delivers a generalised Euler-Lagrange equation 
+\begin{equation}
+\pi _{2}^{t}+\pi _{3}^{t}g_{1}^{t+1}+\delta \pi _{1}^{t+1}=0,  \label{eq:12}
+\end{equation}%
+where the subscript $i$ denotes the partial derivative with respect to the
+function's $i$-th argument.\footnote{%
+For example, $\pi _{2}^{t}=\partial \pi (p^{t-1},p^{t},p^{t+1})/\partial
+p^{t}$.} This difference-differential equation implicitly characterises the
+price path that will be chosen in equilibrium. The first term of this
+equation reflects the direct effect of $p^{t}$ on the profit function. The
+second term encapsulates the effect of $p^{t}$ on $\pi ^{t}$ via the
+strategy choice, $g(p^{t})$, of the subsequent agent. The final term
+captures the discounted effect of the current action on future profits.
+Optimality requires that these effects sum to 0.
+
+\subsection{Inefficiency of the laissez-faire outcome}
+
+\label{sec:need-regulation}
+
+Next we investigate whether the laissez-faire price path derived in section %
+\ref{sec:monop-price-path} provides a rationale for government intervention.
+The definitive answer to this question requires characterising the
+regulatory equilibrium. Intuitively, our setting exhibits a number of
+inefficiencies which suggest that regulation may improve welfare. First, the
+market is served by a monopolist. When a producer has market power, he
+usually tends produce too little and charge a price above the efficient
+level. Second, production causes a negative externality as pollution is
+released. Such externalities may imply overproduction relative to the
+first-best outcome. Finally, the monopolist's profit function contains a
+jump variable. Section \ref{sec:suff-cond-time} showed how this may create a
+time consistency problem for the producer. This problem may induce the
+monopolist to increase production, further exacerbating potential
+overprovision of the durable good.
+
+The three welfare effects mentioned above act in different directions.
+Monopoly power pushes the price above efficiency. Conversely, pollution and
+the monopolist's time consistency problem tend to reduce the price below the
+efficient level. We cannot predict the net effect without knowledge of
+market specifics. It may even be possible for the three inefficiencies to
+exactly cancel each other out. However, as section \ref%
+{sec:second-best-price} discusses, it is unlikely that the laissez-faire
+price will replicate the efficient path. Since we do not exclude the
+possibility of a negative tax (i.e. a subsidy), there is no need to assume
+that a particular type of inefficiency is dominant. The proposal described
+in Chapter \ref{cha:proposition} will still yield the first-best outcome.
+
+\section{Benchmarking regulatory performance}
+
+\label{sec:benchm-regul-perf}
+
+To evaluate the regulatory intervention proposed in Chapter \ref%
+{cha:proposition}, we first need to study the price paths attainable by a
+regulator. For the purpose of benchmarking we assume that in each period the
+regulator has direct control the price of the durable good. Such equilibria
+would arise in standard models of Pigouvian taxation \citep{Benchekroun1997}.
+
+This section characterises two benchmark plans,
+
+\begin{enumerate}
+\item the first-best price path where the regulator can commit to  future
+prices; and,
+
+\item the second-best price path where the regulator is unable to  commit to
+future prices.
+\end{enumerate}
+
+\subsection{First-best price plan}
+
+\label{sec:first-best-price}
+
+\subsubsection{Deriving the plan}
+
+\label{sec:deriving-path}
+
+The regulator's first-best price path is the plan he would choose in the
+first period if at that time he could precommit to a complete sequence of
+future prices. Given rational expectations, ($p_{e}^{t+1}=p^{t+1}$), this
+plan can be obtained as the open-loop Nash equilibrium (OLNE) of the problem 
+\begin{equation}
+\max_{\vect{p}^{t}}\sum_{t=1}^{\infty }\delta
+^{t-1}w^{t}(p^{t-1},p^{t},p^{t+1})\text{,}  \label{eq:13}
+\end{equation}%
+where $\vect{p}^{t}$ is the price vector $\vect{p}^{t}=\{p^{t}\}_{t=1}^{%
+\infty }$. The solution to this problem is a sequence of prices, indexed by
+time, that maximises the net present value of total welfare.
+
+The optimal precommitment price path, $\vect{p}^{t}$, satisfies the
+first-order conditions 
+\begin{align}
+w_{2}^{t}+\delta w_{1}^{t+1}& =0,\quad t=1  \label{four} \\
+w_{3}^{t-1}+\delta w_{2}^{t}+\delta ^{2}w_{1}^{t+1}& =0,\quad t\geq 2.
+\label{five}
+\end{align}%
+The above equations are obtained by differentiating period-1 lifetime
+welfare with respect to the period-1 price $p^{1}$\ and an arbitrary future
+price $p^{t},$\ $t>1$. Since these prices solve an unconstrained
+maximisation problem, they attain the highest possible net present value of
+welfare.
+
+Substituting the derivatives of instantaneous welfare \eqref{dur:welfare1}
+into \eqref{four} and \eqref{five} yields equivalent conditions expressed in
+terms of monopoly profit, consumer surplus and pollution costs. 
+\begin{align}
+\pi _{2}^{t}+CS_{1}^{t}-\psi _{2}^{t}+\delta \left[ \pi
+_{1}^{t+1}+CS_{1}^{t+1}-\psi _{1}^{t+1}\right] & =0  \label{eq:14} \\
+\pi _{3}^{t-1}+CS_{3}^{t-1}-\psi _{3}^{t-1}+\delta \left[ \pi
+_{2}^{t}+CS_{2}^{t}-\psi _{2}^{t}\right] +\delta ^{2}\left[ \pi
+_{1}^{t+1}+CS_{1}^{t+1}-\psi _{1}^{t+1}\right] & =0  \label{eq:15'}
+\end{align}
+
+\subsubsection{Dynamic inconsistency of the first-best plan}
+
+\label{sec:dynam-incons-path}
+
+As already argued, the presence of a jump variable in the instantaneous
+welfare function will likely give rise to a time consistency problem for the
+regulator. It would cause the social planner to change their price plan if
+they could re-optimise in a future period. To see this, suppose that
+currently the regulator follows the plan prescribed by condition \eqref{five}%
+. If, however, they were able to deviate from that plan, they would choose
+their current price according to \eqref{four}, rather than \eqref{five}.
+
+Mathematically, time inconsistency arises from the presence of the term $%
+w_{3}^{t-1}$ in condition \eqref{five}. This term captures the effect of a
+change in the current period's price on the previous period's welfare. This
+effect will be internalised by a regulator who can precommit to future
+prices. However, if a subsequent regulator can re-optimise, he will
+disregard periods that, from his viewpoint, have already passed.
+Consequently the re-optimised price path will be revised downward, drawing
+too much demand away from the preceding period.
+
+Unless the social planner has access to a precommitment device that enables
+him to enforce the plan defined by \eqref{four} and \eqref{five}, he will
+not be able to attain the first-best outcome because of his incentive to
+deviate from it in future periods. When choosing his pricing strategy, a
+sophisticated social planner will recognise this problem and account for
+future incentives to deviate. The subgame perfect equilibrium of the
+intrapersonal game between the current and regulators will deliver a time
+consistent sequence of prices.
+
+\subsection{Second-best price path}
+
+\label{sec:second-best-price}
+
+A regulator who is sophisticated (in the sense of \citet{Donoghue1999}) will
+take into account the behaviour of their future selves and will choose the
+current price accordingly. That is why we now consider a dynamic
+intrapersonal game, where the players are the various temporal incarnations
+of the social planner. Essentially the current regulator solves a
+constrained maximisation problem where future pricing policies are required
+to be sub-game perfect. Again, we focus on the Markov-perfect equilibrium of
+the regulator's intrapersonal game: the current pricing strategy is assumed
+to depend only on the current state of the world: $p^{t}=f(p^{t-1})$.
+Furthermore, we assume that the strategy function $f(p)$\ is continuously
+differentiable, which eliminates the possibility of an infinite number of
+equilibria. However, the above assumptions do not guarantee existence or
+uniqueness of a Markov-perfect equilibrium.
+
+Again, we need to specify how the regulator forms their expectations about
+future prices. As before, we assume that the social planner has perfectly
+rational expectations. That is, he correctly predicts future prices on and
+off the equilibrium path. This assumption prevents the existence of a
+multiplicity of equilibria \citep{Stokey1981}. Given the focus on Markovian
+strategies it implies that $p^{t+1}=f(p^{t})$.
+
+The regulator's MPE price path can be characterised with the help of dynamic
+programming. The equilibrium pricing strategy solves the Bellman equation: 
+\begin{equation}
+W(p^{t-1})=\max_{p^{t}}\Bigl\{w\bigl(p^{t-1},p^{t},f_{e}(p^{t})\bigr)+\delta
+W(p^{t})\Bigr\}\qquad \forall :t\geq 1\text{,}  \label{tc:bell}
+\end{equation}%
+where $W(p)$\ is the social planner's value function. Since MPE strategies
+are time invariant, we must also have 
+\begin{equation}
+f(p^{t-1})=\arg \max_{p^{t}}\Bigl\{w\bigl(p^{t-1},p^{t},f_{e}(p^{t})\bigr)%
++\delta W(p^{t})\Bigr\}.  \label{tc:strat}
+\end{equation}%
+The recursive formulation of this problem ensures the regulator's pricing
+policy will be time consistent.
+
+Suppose that Assumptions \ref{dur:ass1} and \ref{dur:ass2} are satisfied.
+Then the method used to derive the monopolist's Euler equation can also
+yield the generalised Euler-Lagrange equation of the welfare maximisation
+game: 
+\begin{equation}
+w_{2}^{t}+w_{3}^{t}f_{1}^{t+1}+\delta w_{1}^{t+1}=0.  \label{tc:mpe}
+\end{equation}
+
+This equation implicitly defines the second-best price trajectory that would
+result from adhering to the time consistent policy function $f(p)$. The term 
+$w_{3}^{t}f_{1}^{t+1}$ reflects the intrapersonal strategic effect, i.e. the
+effect of current prices on current welfare via future pricing. When the
+period-$t+1$\ price is determined, the regulator will not take into account
+the negative effect of this pricing decision on period-$t$\ welfare. Thus,
+from the current viewpoint, future prices are expected to be suboptimally
+low. The period-$t$\ regulator anticipates this behaviour and mitigates
+these effects by choosing lower current prices. This implies that the time
+consistent prices described by equation \eqref{tc:mpe} will be below the
+first-best precommitment prices, thus generating lower welfare.
+
+Using the definition of instantaneous welfare, equation \eqref{tc:mpe} can
+be rewritten as 
+\begin{multline}
+\bigl(\underbrace{\pi _{2}^{t}+f_{1}^{t+1}\pi _{3}^{t}+\delta \pi _{1}^{t+1}}%
+_{\mbox{laissez-faire Euler eqn}}\bigr)+\bigl(\underbrace{%
+CS_{2}^{t}+f_{1}^{t+1}CS_{3}^{t}}_{\mbox{effect of $p$ on $CS$}}\bigr)
+\label{eq:15} \\
+-\bigl(\underbrace{\psi _{2}^{t}+f_{1}^{t+1}\psi _{3}^{t}+\delta \psi
+_{1}^{t+1}}_{\mbox{effect of $p$ on pollution}}\bigr)=0
+\end{multline}%
+or, alternatively, 
+\begin{equation}
+\underbrace{\left[ \pi _{2}^{t}+CS_{2}^{t}-\psi _{2}^{t}\right] }_{%
+\mbox{direct effect}}+\underbrace{f_{1}^{t+1}\left[ \pi
+_{3}^{t}+CS_{3}^{t}-\psi _{3}^{t}\right] }_{\substack{ \mbox{indirect effect
+of $p^t$} \\ \mbox{on
+        present via $f^{t+1}$}}}+\underbrace{\delta \left[ \pi
+_{1}^{t+1}-\psi _{1}^{t+1}\right] }_{\substack{ 
+\mbox{discounted, direct
+        effect} \\ \mbox{of $p^t$ on the future}}}=0.  \label{eq:16}
+\end{equation}%
+Note that, if 
+\begin{equation}
+CS_{2}^{t}+f_{1}^{t+1}CS_{3}^{t}=\psi _{2}^{t}+f_{1}^{t+1}\psi
+_{3}^{t}+\delta \psi _{1}^{t+1},  \label{eq:17}
+\end{equation}%
+then the time consistent laissez-faire price path could replicate the
+regulator's second-best price path. That is to say, if the downward pressure
+on the price from the reduction in market power is precisely offset by the
+upward pressure from the pollution externality, the laissez-faire outcome
+will be efficient. Of course, this coincidence is highly unlikely. It should
+also be noted that, if the regulator is unable to precommit, social welfare
+could possibly be higher in the absence of government intervention.
+
+We conclude that the social planner's optimal time-consistent price sequence
+is not first best. The dynamic consistency problem experienced by the
+regulator prevents them from fully correcting the inefficiencies associated
+with the pollution emissions of a durable goods monopolist.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:
+
+% LocalWords: externalities precommitment

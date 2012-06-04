@@ -1,0 +1,446 @@
+\documentclass{beamer}
+%\documentclass{article}
+%\usepackage{beamerarticle}
+
+\mode<presentation> { \usetheme{Warsaw}
+  \usefonttheme[onlysmall]{structurebold} \usecolortheme{whale}
+  \setbeamercovered{transparent} }
+
+
+%\usepackage[english]{babel} or whatever
+
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx} \usepackage{times} \usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\newcommand{\bm}[1]{\mathbf{#1}}
+
+\title[Taxing for time consistency]{Slaying the DI dragon}
+
+\subtitle{Taxation mechanisms as precommitment devices.}
+\author[Zuccollo]{James Zuccollo}
+
+\institute[VUW]{Victoria University of Wellington}
+
+\date[Micro workshop]{Micro workshop, June 2008}
+%\subject{Microeconomics}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection: \AtBeginSubsection[] {
+%   \begin{frame}<beamer> \frametitle{Outline}
+%     \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+% }
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+
+% \beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[pausesections]
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution:
+
+% - Exactly two or three sections (other than the summary).  - At
+% *most* three subsections per section.  - Talk about 30s to 2min per
+% frame. So there should be between about 15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+% are going to talk about. So *simplify*!  - In a 20min talk, getting
+% the main ideas across is hard enough. Leave out details, even if it
+% means being less precise than you think necessary.  - If you omit
+% details that are vital to the proof/implementation, just say so
+% once. Everybody will be happy with that.
+
+\begin{frame}
+  \frametitle{Aims}
+  We attempt to fix two problems with one tax and no rule of law!
+\begin{block}{The context}
+  \begin{itemize}
+  \item<1-> Optimal taxation of polluters is a time honoured topic.
+  \item<1-> Overcoming dynamic inconsistency is less well known but
+    has been tackled before.
+  \item<2-> Here we attempt to tackle both problems simultaneously
+    through a single taxation mechanism.
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Questions} 
+  \begin{enumerate}
+    \item<1-> How does dynamic inconsistency affect the regulation of polluters?
+    \item<2-> Is there a mechanism that can overcome the
+      inefficiencies of both dynamic inconsistency and pollution simultaneously?
+    \item<3-> What are the limitations of the mechanism?
+    \end{enumerate}
+  \end{frame}
+
+\section{Background}
+
+\subsection{What are we tackling?}
+
+\begin{frame}
+  \frametitle{Setting the scene}
+  \begin{itemize}
+  \item<1-> A regulator is faced with the problem of correcting the
+    externality created by a polluting firm.
+  \item<2-> The regulator suffers from dynamic inconsistency and is
+    unable to commit to future actions.
+  \item<3-> Depending upon the cause of the time inconsistency, the
+    regulator can be modelled in either of two ways.
+  \item<4-> Once the regulator's problem has been modelled we can look
+    for a taxation scheme that gets as close to the first-best outcome
+    as possible.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dynamic inconsistency}
+  \begin{block}{Definition}
+    A player in a dynamic game is dynamically inconsistent if he
+    will, in future, wish to deviate from a currently optimal plan of
+    action.
+  \end{block}\pause
+  There are two causes of dynamic inconsistency:
+  \begin{itemize}
+  \item Jump states; and,
+  \item Hyperbolic discounting.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jump states}
+  \begin{block}{Definition}
+    A jump state exists when a player's current instantaneous payoff
+    depends on his expected future actions.
+  \end{block}
+  For example:
+  \begin{itemize}
+  \item<1-> Inflation expectations influence current wages;
+  \item<2-> Expected prices influence current mineral extraction rates.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Consequences of jump states}
+If your current payoff depends on future actions then
+  \begin{itemize}
+  \item<1-> you predict the future action based on your currently
+    preferred future action,
+  \item<2-> you get to the future and have to decide what to do,
+  \item<3-> but you no longer care about the effect on your past
+    payoff because that's sunk,
+  \item<4-> so your preferred action differs from what you expected it
+    to be, since your objective function for the period has changed,
+  \item<5-> which means you won't maximise your lifetime utility
+    because you keep changing your mind.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hyperbolic discounting}
+  \begin{block}{Definition}
+    Hyperbolic discounting describes a situation in which preferences
+    are non-stationary because the discount rate is not constant over
+    time.
+  \end{block}
+  \begin{itemize}
+  \item<1-> Empirical research suggests that peoples' discount rate
+    declines as he consider decisions further in the future
+  \item<2-> Hence, the discounted sum of lifetime utility for a
+    sequence of future actions depends on the time period that the
+    actions are viewed from, and decisions are not consistent over
+    time.
+  \end{itemize}
+\end{frame}
+
+\subsection{Inconsistency in the 'real' world}
+
+\begin{frame}
+  \frametitle{Situations which give rise to inconsistency}
+\begin{itemize}
+\item<1-> Jump states commonly arise in the modelling of:
+  \begin{itemize}
+  \item<1-> Durable goods producers
+  \item<2-> Addictive goods producers
+  \item<3-> Exhaustible resource extraction.
+  \end{itemize}
+\item<4-> Hyperbolic discounting is used in many contexts since it is
+  presented as a descriptive model of normal human behaviour.
+\item<5-> Our regulator could suffer from time inconsistency due to
+  either of these factors and both would inhibit him from efficiently
+  controlling pollution.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Implications for regulators}
+  \begin{itemize}
+  \item<1-> A regulator who encounters jump states, or whose
+    preferences exhibit hyperbolic discounting, may not be able to
+    achieve the first best action path.
+  \item<2-> In our context that might result in under-regulation of
+    pollution, which could have irreversible consequences for the
+    environment.
+  \item<3-> We develop an illustrative model for each type of
+    inconsistency and show how the same mechanism can induce the first
+    best outcome in both cases.
+  \end{itemize}
+\end{frame}
+
+\section{Jump state inconsistency}
+
+\subsection{Model}
+
+\begin{frame}
+  \frametitle{The model}
+  A model of a durable good producing monopolist who pollutes is used
+  for exposition.
+  \begin{itemize}
+  \item<1-> Heterogeneous consumers each purchase one unit of a
+    durable good that gives them a stream of benefits in perpetuity.
+  \item<2-> Over time the price of the durable good declines as the
+    keenest consumers purchase it.
+  \item<3-> Consumers decide when to purchase the good and exit the
+    market. He weigh the decreasing price against his valuation of the
+    good in order to make his decision.
+  \item<4-> Thus, consumer demand depends upon his expectations of
+    future prices. Consequently, the monopolist's profits and the
+    welfare function also depend upon expected future prices.
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Benchmarks}
+
+\begin{frame}
+  \frametitle{Benchmarking the regulator}
+  Suppose that the regulator can directly choose prices in the
+  market. The first-best price path is the one that a regulator who
+  could perfectly precommit would choose in order to maximise welfare.
+
+  In this case, the regulator would solve
+  \begin{equation}\label{eq:1}
+    \max_{\mathbf{p}^t} \sum^\infty_{t=1} \delta^{t-1}
+    w(p^{t-1},p^t,p^{t+1}_e).
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  The solution to this problem will satisfy the following DEs
+  \begin{align}
+    w^t_2 + \delta w^{t+1}_1 & = 0, \quad t=1 \label{four}\\
+    w^{t-1}_3 + \delta w^t_2 + \delta^2 w^{t+1}_1 & = 0, \quad t \geq
+    2 \label{five}.
+  \end{align}
+  The source of the time-inconsistency in is the term $w^{t-1}_3$,
+  which shows the effect of a change in the current period's price on
+  the previous period's welfare.
+
+  When optimisation occurs only the future periods' welfare is
+  considered and the effect on the previous period is disregarded.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Second-best regulation}
+  If the regulator is unable to precommit then he can still act in a
+  time consistent fashion by anticipating his future deviations. He
+  will solve the Bellman equation
+  \begin{equation} \label{tc:bell} V(p^{t-1}) = \max_{p^t} \Bigl\{ w
+    \bigl( p^{t-1},p^t,f_e(p^t) \bigr) + \delta V(p^t) \Bigr\} \qquad
+    \forall\: t \geq 1
+  \end{equation}
+    for an equilibrium strategy, $f(p^t)$, that satisfies
+  \begin{equation} \label{tc:mpe} w^t_2 + w^t_3 f^{t+1}_1 + \delta
+    w^{t+1}_1 = 0.
+\end{equation}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Inefficiency}
+    \begin{itemize}
+    \item<1-> The time consistent regulator realises that he will
+      have an incentive to deviate in future, so he sets the current
+      price such that the incentive is removed.
+    \item<2-> Constraining the regulator to be time consistent forces
+      him to deviate from the first-best price path, even when he has
+      direct control over the good's pricing.
+    \item<3-> If profits are a large part of total welfare then this
+      is likely to result in too much pollution, as the price path
+      will be inefficiently low.
+    \end{itemize}
+\end{frame}
+
+\subsection{The solution}
+
+\begin{frame}
+  \frametitle{Delegation and precommitment}
+  \begin{itemize}
+  \item<1-> The value of precommitment in games has long been
+    recognised. The difficulty is in finding an effective
+    precommitment mechanism.
+  \item<2-> Work on strategic delegation has focussed on using a
+    manager as a commitment tool. By contracting with a manager the
+    form's owner can remove themselves from the current period's
+    output decision.
+  \item<3-> The key aspect of the delegation is that an agent is paid
+    to make the current decision for you. The sum you pay him now thus
+    credibly commits the owner to a particular decision in the next
+    period.
+  \item<4-> Here we can achieve the same thing by using the regulated
+    polluter as a commitment tool for the regulator. The 'payment'
+    here is the tax that is levied on the polluter.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Taxation}
+  \begin{itemize}
+  \item<1-> The regulator now levies a tax $\tau^t$ on the
+    monopolist's output/emissions, so the monopolist's profit becomes
+    dependent upon the tax rate: $\pi (p^{t-1}, p^t, p^{t+1}, \tau^t)$.
+  \item<2-> The regulator receives a revenue valued at $\alpha\tau^t
+    \psi(x^t)$ from the revenues. The tax rate can be altered each
+    period, but there is a cost to doing so of
+    $\theta\big(\tau^t-\tau^{t-1}\big)^2$. Thus, the welfare function
+    is dependent upon current and past taxes:
+    $w^t\big(p^{t-1},p^t,p^{t+1},\tau^{t-1},\tau^t\big)$.
+  \item<3-> There is still a jump state in the welfare function, but
+    the regulator now chooses $\tau^t$ when maximising welfare, and
+    leaves the choice of price to the monopolist.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The game}
+  \begin{itemize}
+  \item<1-> The decision of the regulator is modelled as an
+    intra-personal game between the regulator's various temporal selves.
+  \item<2-> We use the MPE solution concept for two reasons: it
+    removes the possibility of trigger strategies, and it gives us
+    time consistent policies.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+\item<1-> Let $\tau^t = f(p^{t-1}, \tau^{t-1})$ be the regulator's
+    period-$t$ taxation strategy and $p^t = g(p^{t-1}, \tau^{t-1})$ be
+    the monopolist's period-$t$ pricing strategy.
+  \item<2-> In equilibrium, the regulator solves the Bellman equation
+    \scriptsize{\begin{multline} 
+      W(p^{t-1},\tau^{t-1}) = \max_{\tau^t} \Bigg\{ w \bigg( p^{t-1},
+      g\big(p^{t-1},\tau^{t-1}\big), g \Big(
+      g\big(p^{t-1},\tau^{t-1}\big) , \tau^t \Big) \tau^{t-1}, \tau^t
+      \bigg) \\ + \delta W \Big( g\big(p^{t-1},\tau^{t-1}\big) ,
+      \tau^t \Big) \Bigg\}
+\end{multline}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equilibrium strategies}
+  \begin{itemize}
+  \item<1-> The key to this formulation is that the welfare value
+    function no longer depends upon any future decision of the
+    regulator, since the future decision has been delegated out.
+  \item<2-> The regulator thus chooses his tax rate such that the
+    price path will replicate the first-best outcome and pollution
+    levels will be optimal.
+  \item<3-> If there is a positive cost to policy adjustment, or the
+    regulator and monopolist value tax revenue differently, then the
+    price path will be distorted away from the first-best.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Key assumptions}
+  This result depends on some important assumptions
+  \begin{itemize}
+  \item<1-> Rational expectations;
+  \item<2-> Simultaneous decision making.
+  \end{itemize}
+\end{frame}
+
+
+\section{Hyperbolic discounting}
+
+\subsection{Framework}
+
+\begin{frame}
+  \frametitle{A quasi-hyperbolic formulation}
+  \begin{itemize}
+  \item<1-> Most authors who work with hyperbolic discounting use a
+    'quasi-hyperbolic' discount rate where the current period's
+    discount rate is $\beta\delta$ and the discount rate between
+    future periods is $\delta$.
+  \item<2-> Agents are thus time inconsistent between the current and
+    future decisions, but are time consistent across expected future decisions.
+  \end{itemize}
+\end{frame}
+
+\subsection{Implementing delegation}
+
+\begin{frame}
+  \frametitle{Delegation}
+  \begin{itemize}
+  \item<1-> A model of a polluting monopolist in the context of a
+    regulator with quasi-hyperbolic preferences was constructed to
+    explore whether a similar delegation mechanism would work in this setting.
+  \item<2-> Since the regulator is only time inconsistent between the
+    current and next periods, delegation easily solves this problem
+    and renders the price path time consistent.
+  \item<3-> This model also depends on simultaneous decision making,
+    but the quasi-hyperbolic formulation is also essential. A truly
+    hyperbolic discount rate would not be amenable to such a solution.
+  \end{itemize}
+\end{frame}
+
+
+\section{Conclusions}
+
+\begin{frame}
+  \frametitle{Take-home lessons}
+  \begin{itemize}
+  \item<1-> Regulators (might) need to think about the time
+    consistency of his decisions if he want to save the world from
+    global warming.
+  \item<2-> Overcoming time inconsistency doesn't need to involve
+    external precommitment mechanisms. First best outcomes can be
+    achieved within the regulator/polluter relationship if the
+    institutional framework is correctly structured.
+  \item<3-> The key to the framework we propose is controlling the
+    information that parties have when he make his decisions. The
+    monopolist can't know the current tax rate when he make his
+    decision.
+  \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,409 @@
+\chapter{Theoretical framework}
+
+\label{cha:theor-fram} 
+% Note: \textit{The aim of this section is to introduce the concepts
+%   that underlie the problem. By the end of the section the problem
+%   should be clear and of interest to the reader. The key concept to
+%   explain is dynamic consistency. The progression of the chapter
+%   leading up to this must discuss
+%   \begin{itemize}
+%   \item Dynamic games
+%   \item Feedback vs open loop equilibria
+%   \item Markovian strategies and the Folk theorem
+%   \item Dynamic consistency vs time-consistency
+%   \item jump variables and the sufficiency condition for time-consistency.
+%   \end{itemize}
+%   It is also important to stress the difficulties of regulating a
+%   dynamically inconsistent polluter. The consequences of failing to
+%   remedy dynamic inconsistency are very high when regulation of
+%   pollution is involved. Emissions regulation must somehow be painted
+%   as an integral part of the motivation for this study rather than as
+%   a vehicle for examining dynamic consistency.}
+
+The following section discusses the theoretical framework of the thesis. The
+game theoretic context of the problem is explained, as is the reason for
+choosing to focus on the regulation of pollution.
+
+Section \ref{sec:dynamic-games} briefly covers the theory of dynamic games
+and specifies the type of games that will be considered. Section \ref%
+{sec:dynamic-consistency} explores the notion of dynamic inconsistency. Here
+the type of dynamic inconsistency that affects the model in chapter \ref%
+{cha:problem} will be delineated. Section \ref{sec:caus-regul-dynam} surveys
+the types of situations such inconsistency problems may occur.
+
+The innovation of this thesis is to design a taxation mechanism that will
+aid a government which regulates a polluter while experiencing dynamic
+inconsistency. The aim is to show that this regulator can use taxes as an
+instrument that provides polluters with efficient incentives even when his
+welfare maximisation problem contains a jump variable.
+
+\section{Dynamic games}
+
+\label{sec:dynamic-games}
+
+\subsection{Features of dynamic games}
+
+\label{sec:feat-dynam-games} Static game theory studies the interaction of
+strategic agents in a so-called `one-shot' framework. Each player makes a
+one-time decision, and there is no future play. Such games can be described
+as static, since they do not have any dynamic element. In reality, many
+important decisions occur in the context of ongoing relationships. As a
+result, the idea of a repeated game (also called a supergame) was developed.
+
+In a repeated game, the one-shot game is played multiple times by the same
+players. These games may produce results unobtainable in static games (e.g.
+cooperation in the infinite horizon Prisoners' Dilemma). However, they
+cannot capture some important features of many observed relationships,
+because the context of the play is the same in every period. In real life,
+it is often the case that one's actions today affect one's possible future
+actions, and thus potential future payoffs. Repeated games do not acocunt
+for such inter-temporal linkages. It is these interactions that dynamic
+games seek to model. In this thesis, the term `dynamic game' will refer to
+games with state dynamics. Repeated games are not within the ambit of
+dynamic games as the term is used here.
+
+A dynamic game is modelled as a dynamical system in which the state of the
+world changes over time in response to players' actions. The state variables
+describe the current state of the system. They may influence the payoffs, or
+the action space, of the players. The state changes over time according to a
+pre-defined law of motion, which may depend upon the players' actions. In
+such a system, players' current actions will affect their future payoffs
+through the state. In addition to the standard static strategic effects,
+these settings allow for the possibility of inter-temporal strategic
+effects. Sometimes they also give rise to intra-personal, inter-temporal
+strategic effects: an agent may have a conflict with their future `self'.
+
+In general, the most popular solution concept in games is that of Nash
+equilibrium. In dynamic games, various refinements are used to rule out Nash
+equilibria that may be considered implausible. A couple of these will be
+explained later in this chapter.
+
+\subsection{Open loop vs feedback strategies}
+
+\label{sec:open loop-vs} There are two common ways to model players'
+behaviour in a dynamic game: players could either precommit up front to
+their future course of action, or they could choose their action in each
+period based on the current state. The former strategies are known as open
+loop strategies, as they are non-responsive to changes in the state. The
+latter strategies are called feedback strategies, because a change in the
+state can affect the player's actions.
+
+An equilibrium in open loop strategies is justifiable only if players have
+precommitment power. Indeed, in an open loop equilibrium, players will not
+change their action in response to deviations from the equilibrium by other
+players. Essentially, open loop games are static games with a
+multi-dimensional action space: instead of choosing one action, at the
+beginning of time the players choose actions for all periods.
+
+In open loop equilibria, players choose their future actions, while taking
+the future actions of their opponents as given. Constructing strategies in
+this fashion means that the prescribed actions will often be sub-optimal if
+the state variable deviates from the anticipated equilibrium path. Thus,
+open loop strategies are generally not subgame perfect: they will not be
+optimal in all possible subgames.
+
+When modelling a situation in which players have the ability to respond to
+deviations of the state, or in other players' strategies, it is more
+appropriate to consider feedback strategies. This approach specifies the
+player's strategy as a decision rule, i.e. a function of the state. It is
+computed while taking as given the decision rules of the other players.
+Because such strategies are optimal for all possible states, by construction
+they will be subgame perfect.
+
+\subsection{State variables}
+
+\label{sec:state-variables} Unlike other types of games, in dynamic games
+players' payoffs can be affected by state variables which change over time.
+The choice of state variables is an important modelling decision that can
+have a marked effect upon the outcome of the game.
+
+There are two important types of state variables: first, those that have a
+direct physical or technological impact upon the game and, secondly, those
+that affects the psychology of agents and, through it, their behaviour. The
+first type includes components of the game structure that affect players'
+payoffs directly, such as pollution stock levels. The second type includes
+variables that are not payoff-relevant, such as the history of play.
+
+In repeated games, the Folk Theorem establishes that there exist a
+multiplicity of equilibria, provided that players have long memories %
+\citep{Fudenberg1986}. Current research demonstrates that the same result
+holds for dynamic games in which strategies are allowed to depend on state
+variables that are not payoff-relevant \citep{Haurie1987,Ausubel1989,Gul1986}
+. The reason is that equilibrium behaviour is influenced by agents' beliefs
+about the consequences of deviations from the equilibrium path. Including
+state variables that affect players' psyche, such as the history of play,
+can give rise to many possible belief structures. This will result in
+multiplicity of equilibria. Because it is difficult to draw economic
+conclusions without a unique prediction, it is common to restrict the state
+variables to those which directly affect players' payoffs. This restriction
+does not guarantee a unique equilibrium, but it does reduce the number of
+possible equilibria.
+
+\subsection{Markov strategies}
+
+\label{sec:markov-strategies} Strategies that are based on information sets
+which include only payoff-relevant information are known as Markov
+strategies. The assumption of Markov strategies implies that players are
+unable to observe events that happened in the deep past. The history of play
+is thus summarised through its effect upon the state variables.
+
+When players' past actions are not directly observable, it is difficult to
+punish past deviations from the equilibrium. Effectively, the restriction to
+Markov strategies rules out the use of trigger strategies. The range of
+potential equilibria is therefore significantly narrowed.
+
+While Markov strategies offer a way to limit the number of possible
+equilibria, they may not always be appropriate. For the Markovian
+restriction to be reasonable, players must be unlikely to use trigger
+strategies. In the regulation games studied here, we claim that players are
+unlikely to use trigger strategies. It seems implausible that a government
+would choose to punish a firm for deviations from the desired output level
+by penalising it for many periods in the future. When governments choose
+their tax rules, they enshrine them in legislation. The tax authority then
+applies the tax rule as specified in the legislation. Since the creation of
+the rule and its application are usually separate activities, taxation rules
+are unlikely to be reactionary. Governments also prefer to appear
+even-handed in their policies. A trigger strategy relies on the threat of
+harsh punishments to enforce an efficient equilibrium. Given that a
+deviation from the equilibrium output level is not illegal, it is unlikely
+that the government would wish to punish a firm for such a deviation. It is
+more reasonable to believe that the level of taxation will depend on the
+current state of the industry, but not upon the firms' history of actions.
+Thus, the use of Markov strategies in this thesis seems justified.
+
+\section{Dynamic consistency}
+
+\label{sec:dynamic-consistency}
+
+\subsection{Dynamic consistency and precommitment}
+
+\label{sec:dynam-cons-prec} The extension of game theory to dynamic games
+opened up a range of interesting new problems. Among those problems is the
+issue of dynamic consistency, which was first explored in the context of
+economic policy by \citet{Kydland1977}. A plan is said to be dynamically
+consistent if a player has no incentive to deviate from it at any time in
+the future. Conversely, a dynamically inconsistent plan is one which, while
+optimal when conceived, the player will choose to deviate from in the future.
+
+A dynamically inconsistent agent will be unable to adhere to an optimal plan
+without the aid of some precommitment device. Some of these devices are
+usually enforced by a third party. On a personal level, people rely on
+family members and friends to help them follow a chosen course of action; on
+a business level, the legal system enforces contractual commitments.
+However, precommitment power is harder to come by when there is no external
+`enforcer' available. Governments, in particular, may find it very difficult
+to bind themselves, since any legislation that they pass can be overturned
+by future legislators. This thesis will examine the problem of a dynamically
+inconsistent regulator in some detail and propose a method by which a
+regulator can overcome their dynamic inconsistency.
+
+\subsection{Time-consistency and perfection}
+
+\label{sec:time-cons-perf} If precommitment is not possible, then an
+equilibrium involving dynamically inconsistent strategies is implausible. No
+agent will be willing to rely upon promises that they expect to be broken.
+Hence, strategies must be dynamically consistent to generate plausible
+equilibria. We now examine in greater detail precisely what is meant by
+dynamic consistency. There are two ideas of dynamic consistency that are
+relevant to this thesis: `time-consistency' and `subgame perfection'.
+
+Time-consistency is the weaker of the two requirements. Any equilibrium that
+is not dynamically inconsistent is time consistent. Given that no agent has
+reneged in the past, and none are expected to renege in the future, no agent
+has an incentive to unilaterally renege on a time-consistent equilibrium.
+
+A subgame perfect equilibrium must satisfy a more stringent test. subgame
+perfection requires that a strategy be optimal regardless of past deviations
+in either the state or in the other players' actions. This must be true for
+all possible values of the state variable and across all time periods. As
+such, a perfect strategy will usually depend on the state variable.
+
+Open loop strategies are announced by agents at the beginning of the game,
+and so describe actions as functions of time and the initial state. Thus, a
+deviation from the expected path by any player will not change the actions
+dictated by an open loop strategy. This is likely to cause the open loop
+strategy to be sub-optimal in the periods following the deviation.
+Therefore, the player will have an incentive to deviate from it. It follows
+that the open loop strategy is not subgame perfect. Note that the strategy
+may still be time-consistent even if it is not dynamically inconsistent, as
+long as play remains on the equilibrium path.
+
+In dynamic games, subgame perfection may be attained with state-dependent,
+feedback strategies. Since perfection implies time-consistency (even though
+the converse is not true), a perfect feedback strategy will also be time
+consistent. Hence, time-consistent strategies can be either open loop or
+feedback.
+
+\subsection{Sufficient conditions for time-consistency}
+
+\label{sec:suff-cond-time} Feedback strategies are designed to be optimal in
+all states. Thus, an equilibrium in feedback strategies is subgame perfect
+by construction. Open loop equilibria are rarely subgame perfect, but are
+often time-consistent along the equilibrium path. Bellman's Principle of
+Optimality states that the continuation of an optimal strategy is optimal in
+all states that arise from past optimal behaviour \citep{Bellman1957}. Thus,
+if the initial state is exogenously given, and players all choose optimal
+strategies, the resulting equilibrium will be time-consistent %
+\citep{Karp1993a}.
+
+The difficulty with this result is that it depends upon an exogenously
+specified initial state. If the initial state is not exogenous, then the
+current state must be a function of future actions. A variable whose value
+depends upon future events is known as a `jump variable'. Problems with jump
+variables are not covered by the Principle of Optimality and rarely have
+time-consistent open loop solutions. However, the absence of a jump variable
+is sufficient to ensure time-consistency of an open loop equilibrium.
+
+The intuition behind the above statement is fairly straightforward. The
+presence of a jump variable suggests that the current state and the current
+payoff depend upon expectations about the future. Thus, in period $t$,
+agents need to form expectations about actions and payoffs in period $t+n$,
+so that they can compute their optimal action. Time inconsistency can arise
+in two ways: first, if these expectations are not fulfilled then the period $%
+t$ action becomes sub-optimal, and so the period $t+n$ action will be
+different from what was anticipated. Even if expectations are fulfilled, the
+period $t+n$ action is still likely to differ from the expected action. This
+is because the $t+n$ action has an effect upon the period $t$ payoff.
+Re-optimising in period $t+n$ would disregard the `inter-temporal
+externality' on the previous periods' payoffs, since they are now sunk.
+Thus, in period $t+n$, the optimal action is unlikely to be the same as was
+expected in period $t$. As a result, the open loop equilibrium calculated in
+period $t$ will be time inconsistent.
+
+Dynamic inconsistency is common in settings where governments regulate
+non-strategic but forward looking agents \citep{Chari1988}. When making
+decisions about the current period, such agents take future payoffs into
+consideration. If current payoffs are affected by future actions, then the
+problem of a subsequent regulator will differ from that of the current one.
+This implies that the regulator's optimal plan will change over time, and so
+the regulator will be dynamically inconsistent.
+
+\subsection{Implications of dynamic inconsistency for regulation}
+
+\label{sec:cons-dynam-incons} The problem considered in this thesis will
+exhibit dynamic inconsistency due to the presence of a jump variable in the
+regulator's objective function. As a result of this, the regulator is unable
+to obtain the first-best price path. In the subsequent chapters, we will
+focus on this inefficiency. But before describing the specifics of the
+model, it is worth canvassing the likely consequences for a dynamically
+inconsistent regulator. Note that the assumptions in the following
+paragraphs are made purely for exposition purposes. All assumptions
+underlying the formal model will be explicitly stated in chapter \ref%
+{cha:problem}.
+
+Imagine that the regulator's objective function includes a jump variable.
+That is, welfare depends upon the regulator's future actions. In each
+period, the regulator chooses the rate of a tax that is imposed on a
+polluter. If the tax rate is expected to fall in the next period, the
+polluter will inter-temporally substitute away from current production
+towards future production; hence, production in the current period will
+decrease. Suppose that the fall in the current period's profits and consumer
+surplus outweighs the decrease in pollution. Then the current period's
+welfare will decrease. To prevent this, the regulator must commit to setting
+high taxes in future periods. The expectation of high future taxes would
+remove the incentive of the polluter for inter-temporal substitution.
+However, once these future periods arrive, the regulator will no longer be
+concerned with the effect of his tax choice upon past welfare. Thus, the
+regulator would revise the tax downward if they have the opportunity to do
+that.
+
+A sophisticated regulator will anticipate future temptations to decrease
+taxes. If they are unable to commit to future policies, they will set the
+current tax strategically to counter future incentives for tax reductions.
+They achieve that by setting a low current tax rate. The essence of the
+problem is that the polluter is under-producing in the current period,
+relative to the future period. This problem can be corrected by decreasing
+current taxation to remove the incentive to shift production to the future.
+As a result, a sophisticated regulator who is unable to precommit will
+under-tax the polluter relative to the social optimum.
+
+Under-taxation of a polluter implies over-pollution. Since pollution and its
+consequences are some of the most pressing problems facing modern
+industrialised societies, designing an effective mechanism to control it is
+a problem of great importance. Correcting a potential policy flaw that could
+lead to significant over-pollution is far more than an academic exercise.
+
+\section{Causes of regulatory dynamic inconsistency}
+
+\label{sec:caus-regul-dynam}
+
+\subsection{Inconsistency of the welfare function}
+
+\label{sec:incons-welf-funct}
+
+A regulator's welfare function consists of four components: firms' profits,
+consumer surplus, externalities and government revenue. For now, revenues
+will be ignored. We abstract from them in order to focus on corrective,
+rather than revenue gathering, regulation.
+
+In a regulated industry that exhibits dynamic inconsistency, firms' profits
+will often contain a jump variable. It is also possible that consumer
+surplus may contain a jump variable, provided that the inconsistency in the
+industry is caused by demand-side behaviour. Jump variables in either of
+these functions can cause the regulator's welfare function to exhibit
+inconsistency.
+
+Note that inconsistency in the profit function will not always be
+transferred to welfare: if the jump variable is in the inverse demand
+function alone, and firms' revenues are simply a transfer from consumers to
+firms, then the jump variable will not appear in welfare. However, this will
+not be true if the regulator weighs profits and consumer surplus
+differently. In this case, expectations about future variables will still be
+present in the welfare function and the regulator will be inconsistent.
+
+\subsection{Industries in which dynamic inconsistency arises}
+
+\label{sec:industr-which-dynam}
+
+There are numerous examples of industries where dynamic inconsistency arises
+from a jump variable in a firm's profit function. Most commonly, it is found
+where durable or addictive goods are being produced, or where an exhaustible
+resource is being extracted.
+
+\subsubsection{Exhaustible resources}
+
+\label{sec:exha-reso} Economists have been interested in exhaustible
+resources since Harold Hotelling's seminal paper \citep{Hotelling1931}. In
+this paper, Hotelling shows that the pricing of an exhaustible resource
+depends upon expectations of subsequent prices. This dependence upon future
+decisions introduces a jump variable the profits of firms who utilise the
+resource. In particular, \citet{Karp1993a} show that a firm with monopsony
+power who purchases an exhaustible resource will be dynamically inconsistent
+if they face either a competitive fringe of consumers, or increasing
+extraction costs.
+
+\subsubsection{Addictive goods}
+
+\label{sec:addictive-goods}
+
+The theory of rational addiction suggests that an addictive good can be
+modelled as a commodity whose current consumption increases the marginal
+benefit of future consumption \citep{Becker1988}. If expected future prices
+are low, then consumption is affected in two ways. First, expected future
+consumption will rise as a direct result of the lower expected price.
+Secondly, current consumption will rise as consumers attempt to increase the
+benefits that they will reap from the low future prices. Thus, a firm
+selling an addictive good can affect current demand by manipulating
+expectations about its future pricing strategy. This introduces a jump
+variable into the firm's profit function and causes the firm to act in a
+dynamically inconsistent fashion.
+
+\subsubsection{Durable goods}
+
+\label{sec:durable-goods} A durable good it one which is not consumed
+instantly, but continues to provide value for an extended period of time.
+When an individual decides to purchase a durable good they must weigh the
+benefit of purchasing in the current period against possible price
+reductions if they delay purchase until a later period. A firm selling
+durable goods, like a firm selling addictive goods, can influence the
+current period's profit by manipulating consumers' expectations about future
+prices. A high expected future price will induce more consumers to buy in
+the current period. The future price is a jump variable in the firm's profit
+function and induces dynamic inconsistency.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:
+
+% LocalWords:  precommitment equilibria precommit externalities

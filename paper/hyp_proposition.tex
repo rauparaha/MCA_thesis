@@ -1,0 +1,194 @@
+
+\chapter{A regulatory game with hyperbolic discounting}
+\label{cha:proposition-1}
+
+
+Intuitively it should be possible to solve a quasi-hyperbolic
+discounting problem through `delegation' of the pricing
+decision.
+
+Preferences which include quasi-hyperbolic discounting give rise to
+time inconsistent behaviour. However, the inconsistency is between
+only the current and next periods. The agent's intended behaviour will
+remain consistent across future periods. Thus, by eliminating the
+direct effect of today's decision on future payoffs, it should be
+possible to render the decision maker consistent.
+
+\section{Regulation with delegation}
+\label{sec:regul-with-deleg}
+
+The delegation game involves the regulator setting a tax rate for
+pollution simultaneously with the monopolist's choice of output in
+each period. Both the tax and the choice of output are feedback
+strategies. We consider only a linear tax, however there are many
+possible ways to levy it. It could also be levied on either emissions
+or upon the stock of pollution. In this section we consider only the
+case of a tax on emissions for consistency with Part \ref{part:jump}.
+
+The case of a tax on emissions will be considered first and then the
+problem with a pollution tax will be solved.
+
+\subsection{The welfare function}
+\label{sec:welfare-function-1}
+
+The regulator's problem changes for two reasons: first, because he
+gains revenue from taxation and, secondly, because we introduce a cost
+to changing the tax rate. Economists are often criticised by
+policymakers for excluding the costs of implementation when they
+recommend taxes. Here, we explicitly include the costs of implementing
+and modifying tax schemes in the regulator's welfare function.
+
+Suppose that the tax is levied on emissions and the revenue from the
+tax is given to consumers as a lump sum. Since the marginal utility of
+income to consumers is $1$, the value of the revenue in the welfare
+function is equal to the cost levied on the monopolist. Hence, the tax
+is a simple transfer of surplus and does not change total welfare.
+
+The value of the tax revenue is $\tau_t x_t$, where $\tau_t$ is the
+period $t$ tax rate. Let the cost of changing policies be $\kappa
+\rho(\tau_t,\tau_{t-1})$.\footnote{A plausible, specific functional
+  form might be $\left(\tau_t - \tau_{t-1}\right)^2$, as in Part
+  \ref{part:jump}.} Then the welfare function becomes
+\begin{align}
+  \label{eq:56}  w(x_t,k_t,\tau_t,\tau_{t-1}) = u(x_t) - C(x_t) - \phi(k_t) - \kappa \rho(\tau_t,\tau_{t-1}).
+\end{align}
+The welfare function is not affected by the level of revenue generated
+by the tax, but it is altered by changes in the tax rate. This
+introduces a `stickiness' to the tax rate. Note that, if $\kappa=0$,
+then there are no costs of policy adjustment and the welfare function
+does not depend upon the tax rate.
+
+\subsection{The profit function}
+\label{sec:profit-function}
+
+With taxation the monopolist's instantaneous profit becomes
+\begin{equation}
+  \label{eq:57} \pi_t =  u'(x_t).x_t - C(x_t) - \tau_tx_t.
+\end{equation}
+
+\subsection{The taxation game}
+\label{sec:delegation-game}
+
+We now construct the regulation game for this problem that mirrors the
+game discussed in Chapter \ref{cha:proposition}.
+
+\subsubsection{State variables and strategies}
+\label{sec:state-variables-1}
+
+The state variables for the game are the current tax rate,
+$\tau_{t-1}$, and the stock of pollution, $k_t$. Note that the tax
+rate is the previous period's: the current period's tax rate cannot be
+a state variable because it is chosen in the current period.
+
+The monopolist chooses output and the regulator sets the tax rate
+concurrently. Let the MPE strategy of the monopolist be $x_t =
+h(\tau_{t-1},k_t)$ and the MPE strategy of the regulator be $\tau_t =
+g(\tau_{t-1},k_t)$.
+
+\subsubsection{The regulator's problem}
+\label{sec:regulators-problem}
+
+Since the regulator discounts in a quasi-hyperbolic fashion, his
+preferences are non-stationary. The current period's value function is
+\begin{multline}
+  \label{eq:58} U(\tau_{t-1},k_t) = \max_{\tau_t} \bigg\{ w\big(
+    h(\tau_{t-1},k_t),k_t,\tau_t,\tau_{t-1}\big) \\+ \beta\delta V
+  \big( \tau_t,\theta k_t + h(\tau_{t-1},k_t) \big) \bigg\}.
+\end{multline}
+The value function for future periods is
+\begin{multline}
+  \label{eq:59}  V(\tau_{t-1},k_t) = w\big(
+  h(\tau_{t-1},k_t),k_t,g(\tau_{t-1},k_t),\tau_{t-1}\big) \\ +
+  \delta V \big( g(\tau_{t-1},k_t),\theta k_t + h(\tau_{t-1},k_t)
+  \big).
+\end{multline}
+
+\subsubsection{The monopolist's problem}
+\label{sec:monopolists-problem}
+
+Since the monopolist discounts exponentially, he has a stationary
+value function:
+\begin{equation}
+\label{eq:73}
+  \Pi(\tau_{t-1},k_t) = \max_{x_t} \left\{
+    \pi(x_t,g\left(\tau_{t-1},k_t)\right) + \delta \Pi \left(
+      g(\tau_{t-1},k_t), \theta k_t + x_t \right) \right\}.
+\end{equation}
+
+\subsubsection{Equilibrium strategies}
+\label{sec:equil-strat-1}
+
+Solving the system of equations specified by equations
+\eqref{eq:58}--~\eqref{eq:73} gives the generalised Euler-Lagrange
+equations characterising the optimal strategies for each player.
+
+The Euler-Lagrange equation characterising the regulator's strategy is
+\begin{multline}
+  \label{eq:30}
+  \frac{w^{t-1}_3g^{t-1}_1 - \beta\left( w^{t-1}_1h^{t-1}_1 +
+      w^{t-1}_3g^{t-1}_1 + w^{t-1}_4 \right)}{\delta h^{t-1}_1}  -
+  \frac{w^{t-2}_3}{\delta^2 h^{t-1}_1} \\=
+  \beta ( w^t_1h^t_2 + w^t_2 + w^t_3g^t_2 ) - g^t_2w^t_3 \\
+  +\frac{\left( \theta + h^t_2 \right)}{h^t_1} \left[ w^t_3g^t_1 -
+    \beta\left( w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 \right) -
+    \frac{w^{t-1}_3}{\delta} \right].
+\end{multline}
+See Appendix \ref{sec:regulators-problem-1} for the derivation.;
+
+In order to compare to the first-best solution let us simplify this
+expression to the special case where $\kappa=0$ and there is no cost
+of policy change. This can be done by substituting in the partial
+derivatives of the welfare function:
+\begin{align}
+  \label{eq:67}
+  w^t_1 &= u'(x_t) - c'(x_t) \\ \label{eq:68} w^t_2 &= -\phi'(x_t)
+  \\ \label{eq:69} w^t_3 &= 0 \\ \label{eq:70} w^t_4 &= 0.
+\end{align}
+After substitution the Euler equation, \eqref{eq:30} reduces to
+\begin{equation}
+  \label{eq:71}
+  \frac{u'(x_{t-1}) - c'(x_{t-1})}{\delta} - \phi'(x_t) - \theta \big(
+  u'(x_t) - c'(x_t) \big) = 0.
+\end{equation}
+Multiplying by $\delta$ and shifting the equation forward one period
+gives
+\begin{equation}
+  \label{eq:72}
+  u'(x_t) - c'(x_t) - \delta \phi'(x_{t+1}) - \delta\theta \big(
+  u'(x_{t+1}) - c'(x_{t+1}) \big) = 0
+\end{equation}
+which replicates the result of equation \eqref{eq:45}, the
+precommitment outcome. Thus, the regulation game replicates the output
+path of the first-best.
+
+For the monopolist's choice of $x_t$ the relevant Euler-Lagrange
+equation is
+\begin{equation}
+\label{eq:84}
+  \pi^t_2g^t_1 + \frac{g^t_1}{g^t_2} \left( \theta \pi^t_1 -
+    \pi^t_2g^t_2 - \frac{1}\delta\pi^{t-1}_1 \right) -
+  \frac{\theta\pi^{t-1}_1 - \pi^{t-1}_2g^{t-1}_2 -
+    \frac{1}\delta\pi^{t-2}_1}{\delta g^{t-1}_2} = 0.
+\end{equation}
+See Appendix \ref{sec:monopolists-problem-1} for a derivation.
+
+
+
+% The derivatives of the profit function can now be found and
+% substituted in:
+% \begin{multline}
+% \label{eq:80}
+% (-x_t)g^t_1 + \frac{g^t_1}{g^t_2} \bigg( \theta \bigg( u''(x_t)x_t +
+% u'(x_t) - C'(x_t) - \tau_t \bigg) \\ - (-x_t)g^t_2 -
+% \frac{1}\delta\bigg( u''(x_{t-1})x_{t-1} + u'(x_{t-1}) - C'(x_{t-1}) -
+% \tau_{t-1} \bigg) \bigg) \\ - \frac{\theta\bigg( u''(x_{t-1})x_{t-1} +
+%   u'(x_{t-1}) - C'(x_{t-1}) - \tau_{t-1} \bigg) - (-x_{t-1})g^{t-1}_2
+%   \\- \frac{1}\delta\bigg( u''(x_{t-2})x_{t-2} + u'(x_{t-2}) -
+%   C'(x_{t-2}) - \tau_{t-2} \bigg)}{\delta g^{t-1}_2} = 0
+% \end{multline}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:

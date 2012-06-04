@@ -1,0 +1,99 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage[round]{natbib}
+%\usepackage[pagebackref=true,plainpages=false]{hyperref}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{subfig}
+
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddel}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{ass}{Assumption}
+
+%\includeonly{theory}
+%\includeonly{jump_computation}
+%\includeonly{hyperbolic,hyp_appendix}
+%\includeonly{jump_computation,jump_comp_appendix}
+
+\linespread{1.5}
+
+%\hypersetup{colorlinks = false, linkcolor = black, anchorcolor = red, citecolor = blue,filecolor = red,pagecolor = red, urlcolor = blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% \title{Environmental regulation of firms that experience dynamic
+%   inconsistency}
+% \author{James Zuccollo}
+% \pagenumbering{alph}
+% \maketitle
+
+% \clearpage\pagenumbering{roman}
+% \tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage\pagenumbering{arabic}
+\include{introduction}
+
+%\part{Jump states}
+%\label{part:jump}
+
+\include{theory}
+
+\include{jump_problem}
+
+\include{jump_proposition}
+
+\include{jump_computation}
+
+
+%\part{Extension: hyperbolic discounting}
+%\label{part:hyper}
+
+\include{hyperbolic}
+
+%\include{hyp_proposition}
+
+%\include{hyp_computation}
+
+
+% \include{extensions}
+
+\include{conclusion}
+
+\appendix
+
+\include{assump_app}
+
+\include{durable_app}
+
+\include{jump_comp_appendix}
+
+\include{hyp_appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plainnat}
+\bibliography{Thesis}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:

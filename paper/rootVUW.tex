@@ -1,0 +1,121 @@
+\documentclass[12pt, a4paper, oneside, openright]{book}
+
+\usepackage{vuwthesis} % sets up some local things, mostly the front page
+\usepackage{palatino} % sets palatino as the default font
+%\usepackage{url} % for typesetting urls
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage[round]{natbib}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{multirow}
+
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddel}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{ass}{Assumption}
+
+\linespread{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+
+\title{Environmental regulation of firms that experience dynamic
+  inconsistency}
+\author{James Zuccollo}
+
+\subject{Economics}
+
+\abstract{The recent push for environmental regulation has invigorated
+  the discussion of mechanism design and optimal taxation
+  policy. Recent decades have also seen growing interest in
+  behavioural economics and empirically based theory. In this thesis
+  we take a step towards combining the two by asking how a regulator
+  may correct an externality in situations where they have a time
+  consistency problem.
+
+  Time inconsistency is one of the notable developments of behavioural
+  economics. It posits that an agent's decisions do not remain
+  consistent over time, which causes a utility loss if the agent
+  cannot commit themselves to a particular course of action and stick
+  to it. The solution to inconsistency problems is to precommit to a
+  course of action and prevent future deviations from it. However,
+  finding a mechanism to enable such precommitment is often
+  problematic.
+
+  A regulator who maximises welfare can have a time consistency
+  problem because welfare will depend on the decisions of firm and
+  households who may themselves be inconsistent. That inconsistency
+  then propagates to the regulator's decision and reduces the level of
+  welfare that the regulator can reach. Alternatively, the regulator's
+  time consistency problem can be caused by non-stationarity in their
+  time preferences.  To reach the first-best outcome the regulator
+  must not only eliminate the environmental externality: they must
+  also overcome their own time inconsistency problem.
+
+  This thesis draws from the literature on strategic delegation to
+  construct a taxation game in which the regulator can achieve the
+  first best taxation regime without the need for external
+  precommitment devices. We study a dynamic game where the regulator
+  chooses a tax rate and the regulated monopolist chooses their
+  price. We show that the Markov-perfect equilibrium price path of
+  this game will replicate the first best plan. Our results holds for
+  time inconsistency caused by both jump states and quasi-hyperbolic
+  discounting.}
+
+\otherdegree{Master of Commerce and Administration}
+
+\maketitle
+
+\include{acknowledge}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+\include{introduction}
+
+\include{theory}
+
+\include{jump_problem}
+
+\include{jump_proposition}
+
+\include{jump_computation}
+
+\include{hyperbolic}
+
+\include{conclusion}
+
+\appendix
+
+\include{assump_app}
+
+\include{durable_app}
+
+\include{jump_comp_appendix}
+
+\include{hyp_appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibliographystyle{ieeetr} %originally used by vuwthesis style
+\bibliographystyle{plainnat}
+\bibliography{Thesis}
+
+
+\end{document}

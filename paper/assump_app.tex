@@ -1,0 +1,44 @@
+\chapter[Concavity proof]{Concavity of the monopolist's profit function}
+\label{cha:Assumpproof}
+
+For concavity of the profit function we require $\ddel{\pi}{(p^t)} <
+0$. Now, by differentiating equation \eqref{dur:profit} twice
+\begin{equation}
+    \ddel{\pi}{(p^t)} = 2 \del{x}{p^t}  - \del{x}{p^t} C''(x) + \ddel{x}{(p^t)} \bigl( p - C'(x)
+    \bigr) < 0
+\end{equation}
+The term $2 \del{x}{p^t}$ is negative because of the downward slope
+of the demand function and $- \del{x}{p^t} C''(x)$ must also be
+negative since by Assumption \ref{dur:ass2} the cost function is
+convex. Now a monopoly will always set $P > MC$ so $p - C'(x)$ must
+be positive. Hence, it is sufficient for concavity of the profit
+function that the demand function be weakly concave:
+$\ddel{x}{(p^t)} \leq 0$.
+
+Note that while this condition is sufficient it is not necessary
+since if the cost function were highly convex then a mildly convex
+demand function could still give a concave profit function.
+
+Taking the second derivative of the demand function (equation
+\eqref{eq:demand}) gives
+\begin{equation}
+    \ddel{x}{(p^t)} = \beta^2 \Phi''(p^{t-1} - \beta p^t) -
+    \Phi''(p^t - \beta p^{t+1}) < 0.
+\end{equation}
+Hence, the condition for concavity of the demand function is
+\begin{equation}    \label{dur:demandconcavity}
+    \beta^2 \Phi''(p^{t-1} - \beta p^t) < \Phi''(p^t - \beta
+    p^{t+1}).
+\end{equation}
+Now, by equation \eqref{eq:6}, $p^{t-1} - \beta p^t > p^t - \beta
+p^{t+1}$ so \eqref{dur:demandconcavity} can only hold for all
+possible price trajectories if $\Phi''' \leq 0$. However, if $\Phi''
+< 0$ then condition \eqref{dur:demandconcavity} still cannot be
+guaranteed to hold. Hence it is necessary to further assume that
+$\Phi'' \geq 0$. Again, this is a sufficient rather than a necessary
+condition for concavity of the profit function.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:

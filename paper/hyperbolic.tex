@@ -1,0 +1,496 @@
+\chapter[Hyperbolic discounting]{Extension: a quasi-hyperbolic discounting
+model}
+
+\label{cha:model}
+
+In Chapter \ref{sec:dynamic-consistency} we mentioned that there are two
+main causes of dynamic inconsistency: jump states and hyperbolic
+discounting. The prior chapters of this thesis have dealt extensively with
+the issue of regulation in the presence of jump states. We developed a
+variant of a strategic delegation game to deal with inconsistency implied by
+a jump state. Inefficiencies due to hyperbolic discounting can be addressed
+in a similar way. In this chapter we demonstrate how the same mechanism can
+also be used by a regulator who suffers from inconsistency due to
+quasi-hyperbolic discounting.
+
+We will argue that this type of inconsistency is different from the problem
+posed by jump states. However, the taxation mechanism described in chapter %
+\ref{cha:proposition} can still attain the socially optimal outcome.
+
+\section{Quasi-hyperbolic discounting}
+
+\label{sec:quasi-hyperb-disc}
+
+Hyperbolic discounting models originated from \citet{Ainslie1992}'s
+empirical work. He showed that a hyperbolic curve is a far better match for
+the discount rate of most people than the standard exponential curve. When
+agents use hyperbolic discounting, their intertemporal trade-offs are not
+time invariant. Thus, such discount functions are not as mathematically easy
+to work with as exponential functions. Because of this difficulty Ainslie's
+book did not get the attention it deserved until the modifications by %
+\citet{Laibson1997} which made the analysis more tractable.
+
+Rather than adopting a full hyperbolic function, Laibson introduced an
+exponential function with a modifier on the current period's discount rate.
+In Laibson's model, the discount factor for the next period is $\beta \delta 
+$, where $0<\beta <1$ and $0<\delta <1$. All subsequent periods are
+discounted exponentially by a factor $\delta $. This modification makes the
+model both simple to work with and a fair approximation of a hyperbolic
+function. Time preferences with this structure are known as quasi-hyperbolic
+preferences.
+
+Quasi-hyperbolic discounting captures non-stationary time preferences, \`{a}
+la hyperbolic discounting, while preserving analytical tractability.
+Non-stationarity gives rise to time inconsistency, as the intertemporal
+trade-off between two successive periods will change with the agent's time
+reference. Consequently, precommitment has value similar to that in models
+with jump states.
+
+In the following two chapters we develop a simple quasi-hyperbolic
+discounting model analogous to the monopolistic model of Chapter \ref%
+{cha:problem}. Then we demonstrate the ability of the taxation game to
+correct both the regulator's time inconsistency as well as the pollution
+externality.
+
+\section{The quasi-hyperbolic model}
+
+\label{sec:quasi-hyperb-model}
+
+As before, this model also involves a monopolist producing a good that
+creates a pollution externality. The regulator addresses inefficiencies
+caused by this externality through Pigouvian taxation. However, the
+regulator suffers from self-control problems induced by quasi-hyperbolic
+time preferences.
+
+\section{Elements of the model}
+
+\label{sec:elements-model}
+
+The description of our model begins with a characterisation of the agents: a
+consumer, a monopolist and a regulator.
+
+\subsection{The consumer}
+
+\label{sec:consumer}
+
+Imagine a representative consumer who derives utility from two goods: a
+polluting good, $x$, and a numeraire, $m$. The consumer's instantaneous
+utility function is 
+\begin{equation}
+U(x,m)=u(x)+m.  \label{eq:27}
+\end{equation}%
+We assume that $u(x)$ satisfies the Inada conditions. This ensures that the
+inverse demand is well-defined for all positive values of $x$.
+
+The consumer's budget constraint is 
+\begin{equation}
+px+m=I.  \label{eq:28}
+\end{equation}%
+Therefore, inverse demand in this market is given by 
+\begin{equation}
+p=u^{\prime }(x).  \label{eq:31}
+\end{equation}
+
+\subsection{The monopolist}
+
+\label{sec:monopolist}
+
+The market for good $x$ is served by a monopolist with a cost function $C(x)$%
+. His instantaneous profit function is 
+\begin{align}
+\pi (x)& =R(x)-C(x)  \label{eq:32} \\
+& =px-C(x).
+\end{align}%
+Equation \eqref{eq:31} implies that profit can also be written as 
+\begin{equation}
+\pi (x)=u^{\prime }(x)x-C(x).  \label{eq:81}
+\end{equation}
+
+The monopolist has standard exponential time preferences and is thus time
+consistent.
+
+\subsection{The regulator}
+
+\label{sec:regulator}
+
+Production generates a pollution externality that is not internalised by the
+monopolist. Unlike in the previous chapters, here pollution is modelled as a
+stock externality rather than a flow externality. The regulator has
+oversight of the monopolist and seeks to mitigate the damage wrought by the
+monopolist's emissions. The stock of pollution generated by the production
+of good $x$ at time $t$ is denoted by $k_{t}$.\footnote{%
+For tractability in this model we have switched from flow pollution to stock
+pollution.} The environmental harm caused by this stock is $\phi (k_{t})$,
+where $\phi ^{\prime }(k_{t})>0$.
+
+The stock of pollution evolves according to the following law-of-motion: 
+\begin{equation}
+k_{t}=\theta k^{t-1}+x^{t-1}.  \label{eq:33}
+\end{equation}%
+The parameter $\theta \in \lbrack 0,1]$ represents the rate of pollution
+carry-over. Instantaneous welfare is thus given by 
+\begin{align}
+w(x_{t},k_{t})& =\pi (x_{t})+CS(x_{t})-\phi (k_{t})  \label{eq:83} \\
+& =u^{\prime }(x_{t})x_{t}-C(x_{t})+\int_{0}^{x_{t}}u^{\prime
+}(x)\;dx-u^{\prime }(x_{t})x_{t}-\phi (k_{t}) \\
+& =u(x_{t})-C(x_{t})-\phi (k_{t}).
+\end{align}
+
+The regulator suffers from time inconsistency and is modelled as having
+quasi-hyperbolic preferences. In particular, his net present valuation of
+welfare from the period-$t$ perspective is 
+\begin{equation}
+W_{t}=w(x_{t},k_{t})+\beta \sum_{i=1}^{\infty }\delta ^{i}w(x_{t+i},k_{t+i}).
+\label{eq:35}
+\end{equation}%
+Note the $\beta $ modifier in lifetime welfare. If $\beta =1$ then the
+preferences are `exponential' and time consistent. If $\beta <1$, as is
+assumed here, then preferences are `present biased' (i.e.\ non-stationary)
+and the regulator will experience dynamic inconsistency.
+
+\section{Laissez-faire equilibrium}
+
+\label{sec:laiss-faire-equil}
+
+First we consider the laissez-faire case. Suppose that the firm is not
+regulated by the government. The monopolist does not account for the damages
+arising from his pollution. As a result, the pollution stock does not appear
+in his payoff. In each period, the firm solves the following static problem: 
+\begin{equation}
+\max_{x}u^{\prime }(x)x-C(x).  \label{eq:36}
+\end{equation}
+
+The first order condition of this problem is 
+\begin{equation}
+u^{\prime \prime }(x^{\ell })x^{\ell }+u^{\prime }\left( x^{\ell }\right)
+-C^{\prime }\left( x^{\ell }\right) =0\text{,}  \label{eq:37}
+\end{equation}%
+where $x^{\ell }$ denotes the laissez-faire level of output chosen by the
+monopolist. Intuitively, condition \eqref{eq:37} delivers the output level
+at which marginal profit is equal to zero.
+
+Since the monopolist discounts future payoffs exponentially, his lifetime
+profit is 
+\begin{equation}
+\sum_{t=0}^{\infty }\delta ^{t}\pi _{t}=\frac{u^{\prime }\left( x^{\ell
+}\right) x^{\ell }-C\left( x^{\ell }\right) }{1-\delta }\text{.}
+\label{eq:82}
+\end{equation}
+
+\section{Benchmarking regulation}
+
+\label{sec:benchm-regul}
+
+\subsection{First best regulation}
+
+\label{sec:first-best-regul}
+
+Before we analyse the taxation game, let us first benchmark the performance
+of a regulator who could choose output levels. Again, we first examine the
+problem of a hypothetical regulator who can both directly determine output
+and perfectly precommit to future policies. 
+
+Suppose that the regulator can directly choose the lifetime output plan $%
+\{x_{t}\}_{t=0}^{\infty }$ at time $0$. The optimal plan would solve 
+\begin{multline}
+W_{0}=u(x_{0})-C(x_{0})-\phi (k_{0})  \label{eq:38} \\
++\beta \sum_{t=1}^{\infty }\delta ^{t}\left[ u(x_{t})-C(x_{t})-\phi (k_{t})%
+\right]
+\end{multline}%
+where the state variable evolves according to%
+\[
+k_{t}=\theta k_{t-1}+x_{t-1}, 
+\]%
+$\delta $ is the discount rate and $\beta $ is the quasi-hyperbolic modifier
+on the future discount factor.
+
+The regulator's optimal choice will satisfy 
+\begin{equation}
+w_{1}^{0}+\beta \delta \left( w_{2}^{1}-\theta w_{1}^{1}\right) =0
+\label{eq:86}
+\end{equation}%
+in period 0, and 
+\begin{equation}
+w_{1}^{t}+\delta \left( w_{2}^{t}-\theta w_{1}^{t+1}\right) =0\qquad \forall
+\;t\geq 2.  \label{eq:87}
+\end{equation}%
+for each subsequent period $t$. See Appendix \ref{sec:first-best-regul-1}
+for more detail. \ 
+
+Equations \eqref{eq:86} and \eqref{eq:87} together characterise the output
+path the regulator would choose, were he able to directly control output
+levels. From the perspective of the regulator at time $0$, this is the first
+best output path. After substituting $w(x_{t},k_{t})$ from \eqref{eq:83}, we
+obtain%
+\begin{equation}
+u^{\prime }(x_{t})-C^{\prime }(x_{t})-\delta \theta \left( u^{\prime
+}(x_{t+1})-C^{\prime }(x_{t+1})\right) -\delta \phi ^{\prime
+}(k_{t+1})=0\qquad \forall \;t\geq 2.  \label{eq:45}
+\end{equation}%
+This equation will be used for comparison with the laissez-faire condition,
+as they have similar forms.
+
+\subsection{Comparison to laissez-faire outcome}
+
+\label{sec:comp-laiss-faire}
+
+It is instructive to compare the first-best outcome to the laissez-faire
+equilibrium characterised in equation \eqref{eq:37}: 
+\begin{equation}
+u^{\prime }\left( x^{\ell }\right) -C^{\prime }\left( x^{\ell }\right)
++u^{\prime \prime }\left( x^{\ell }\right) x^{\ell }=0.  \label{eq:46}
+\end{equation}%
+Remember that this condition sets the monopolist's marginal profit to zero.
+Since profit is concave, marginal profit is a decreasing function.
+
+We focus on the steady state of the model. Suppose that $x_{t}=\bar{x}%
+,\forall t$, and thus $k_{t}=\bar{k},\forall t$. Now rearrange equation %
+\eqref{eq:45}, 
+\begin{equation}
+u^{\prime }\left( \bar{x}\right) -C^{\prime }\left( \bar{x}\right) =\frac{%
+\delta \phi ^{\prime }\left( \bar{k}\right) }{1-\delta \theta },
+\label{eq:47}
+\end{equation}%
+and add $u^{\prime \prime }\left( \bar{x}\right) \bar{x}$ to both sides: 
+\begin{equation}
+u^{\prime }\left( \bar{x}\right) -C^{\prime }\left( \bar{x}\right)
++u^{\prime \prime }\left( \bar{x}\right) \bar{x}=\frac{\delta \phi ^{\prime
+}\left( \bar{k}\right) }{1-\delta \theta }+u^{\prime \prime }\left( \bar{x}%
+\right) \bar{x}.  \label{eq:48}
+\end{equation}%
+The left-hand side of the above equation represents the monopolist's
+marginal profit evaluated at the steady-state first best output level.
+Remember that marginal profit is a decreasing function. Thus, if $\frac{%
+\delta \phi ^{\prime }\left( \bar{k}\right) }{1-\delta \theta }+u^{\prime
+\prime }\left( \bar{x}\right) \bar{x}>0$ then $\bar{x}<x^{\ell }$ and vice
+versa.
+
+Signing the component parts gives 
+\begin{align}
+\delta \phi ^{\prime }\left( \bar{x}\right) & >0  \label{eq:49} \\
+1-\beta \delta & >0 \\
+u^{\prime \prime }\left( \bar{x}\right) \bar{x}& <0
+\end{align}%
+So if 
+\begin{equation}
+\frac{\delta \phi ^{\prime }\left( \bar{k}\right) }{1-\delta \theta }%
+>u^{\prime \prime }\left( \bar{x}\right) \bar{x}  \label{eq:50}
+\end{equation}%
+then $\bar{x}<x^{\ell }$. The left hand side of the inequality represents
+the lifetime marginal cost of the externality, while the right hand side is
+the deadweight loss due to monopoly power. The externality implies that the
+quantity produced may be too high from a welfare point of view, while the
+firm's market power suggests that production could be too low. Taxing the
+firm to reduce pollution is only worthwhile when the former effect outweighs
+the latter. Henceforth, we shall assume that equation \eqref{eq:50} holds.
+
+\subsection{Second best regulation}
+
+\label{sec:second-best-regul}
+
+Sophisticated regulators would recognise that they have a time inconsistency
+problem. Therefore, they will try to avail themselves of a solution. If they
+unable to precommit to future policies, they will act strategically to
+influence the decisions of their future selves. Such behaviour would give
+rise to a time-consistent second best-output path. This path would occur if
+the regulator could directly choose output, but had no means of
+precommitting themselves to future decisions.
+
+To solve for the time consistent equilibrium, we must formulate the problem
+recursively. Let the MPE strategy of the regulator be $x_{t}=f(k_{t})$. Then
+his Bellman equation is 
+\begin{equation}
+U(k_{t})=\max_{x_{t}}\left\{ w(x_{t},k_{t})+\beta \delta V(\theta
+k_{t}+x_{t})\right\}   \label{eq:51}
+\end{equation}%
+where $U(\cdot )$ is his current period's value function and $V(\cdot )$ is
+his continuation value function. The continuation value function captures
+the stream of future payoffs from period $t+1$ onward. It is different from
+the current period's value function because quasi-hyperbolic preferences are
+non-stationary. Since from next period onwards the regulator would discount
+welfare exponentially, the continuation value function must satisfy the
+recursive equation 
+\begin{equation}
+V(k_{t})=w\left( f(k_{t}),k_{t}\right) +\delta V\left( \theta
+k_{t}+f(k_{t})\right) .  \label{eq:52}
+\end{equation}
+
+Dynamic programming renders a generalised Euler equation that characterises
+the regulator's output strategy: 
+\begin{equation}
+w_{1}^{t}+\beta \delta (w_{1}^{t+1}f_{1}^{t+1}+w_{2}^{t+1})-\delta (\theta
++f_{1}^{t+1})w_{1}^{t+1}=0.  \label{eq:55}
+\end{equation}
+
+Note the difference between equation \eqref{eq:55} and equation \eqref{eq:87}%
+. This difference suggests that the time consistent path will not coincide
+with the first-best (i.e. precommitment) path.
+
+\section{Regulation with delegation}
+
+\label{sec:regul-with-deleg}
+
+Intuitively it should be possible to solve a quasi-hyperbolic discounting
+problem through `delegation' of the pricing decision.
+
+Quasi-hyperbolic time preferences give rise to time inconsistent behaviour.
+However, the internal strategic conflict between two successive regulators,
+in periods $t$ and $t+1$, only concerns the choice of the period-$t+1$
+action. These two regulators do not disagree about future actions, as both
+will discount future payoffs exponentially. Thus, by eliminating the direct
+effect of today's decision on next period's payoff, it should be possible to
+render the regulator consistent.
+
+In our delegation game, the regulator sets a tax rate for pollution
+simultaneously with the monopolist's choice of output. Both the tax and the
+output are feedback strategies. As in the previous chapters, we consider a
+linear tax on emissions.
+
+\subsection{The welfare function}
+
+\label{sec:welfare-function-1}
+
+Taxation affects the regulator's problem in two ways: first, he gains
+revenue from taxation and, secondly, there is a cost to changing the tax
+rate over time. Economists are often criticised that they do not account for
+the cost of taxes when they recommend them. That is why we explicitly
+include the costs of implementing and modifying tax schemes in the
+regulator's welfare function.
+
+Suppose that the tax is levied on emissions and the revenue from the tax is
+given to consumers as a lump sum transfer. Since the marginal utility of
+income to consumers is $1$, the value of the revenue in the welfare function
+is equal to the cost of taxation borne by monopolist. Hence, the tax is a
+simple transfer of surplus and does not change total welfare.
+
+Period-$t$ tax revenue is $\tau _{t}x_{t}$, where $\tau _{t}$ is the tax
+rate chosen by the government. Let the adjustment cost of changing policies
+be $\kappa \rho (\tau _{t},\tau _{t-1})$.\footnote{%
+A plausible, specific functional form might be $\left( \tau _{t}-\tau
+_{t-1}\right) ^{2}$, as in Chapter \ref{sec:costs-policy-adjustm}.} Then
+instantaneous welfare is given by 
+\[
+w(x_{t},k_{t},\tau _{t},\tau _{t-1})=u(x_{t})-C(x_{t})-\phi (k_{t})-\kappa
+\rho (\tau _{t},\tau _{t-1}). 
+\]%
+Welfare is not directly affected by tax revenue, but changing the tax rate
+over time is costly for the regulator. This assumption introduces a
+`stickiness' to the tax rate. Note that if $\kappa =0$, policy adjustment
+will be costless and the welfare function will not depend directly on the
+tax rate.
+
+\subsection{The profit function}
+
+\label{sec:profit-function}
+
+Taxation implies that the monopolist's instantaneous profit will now have
+the following form: 
+\begin{equation}
+\pi _{t}=u^{\prime }(x_{t})x_{t}-C(x_{t})-\tau _{t}x_{t}.  \label{eq:57}
+\end{equation}
+
+\subsection{The taxation game}
+
+\label{sec:delegation-game}
+
+Next we set up a regulation game for this problem that mirrors the game
+discussed in Chapter \ref{cha:proposition}.
+
+\subsubsection{State variables and strategies}
+
+\label{sec:state-variables-1}
+
+The state variables in this game are the previous period's tax rate, $\tau
+_{t-1}$, and the stock of pollution, $k_{t}$. Note that the current period's
+tax rate is not a state variable, as it is set in the current period.
+
+In each period, the monopolist chooses output simultaneously with the
+regulator's choice of the current tax rate. Let the MPE strategy of the
+monopolist be $x_{t}=h(\tau _{t-1},k_{t})$ and the MPE strategy of the
+regulator be $\tau _{t}=g(\tau _{t-1},k_{t})$.
+
+\subsubsection{The regulator's problem}
+
+\label{sec:regulators-problem}
+
+The regulator Bellman equation is now given by%
+\begin{multline}
+U(\tau _{t-1},k_{t})=\max_{\tau _{t}}\bigg\{w\big(h(\tau
+_{t-1},k_{t}),k_{t},\tau _{t},\tau _{t-1}\big)  \label{eq:58} \\
++\beta \delta V\big(\tau _{t},\theta k_{t}+h(\tau _{t-1},k_{t})\big)\bigg\}.
+\end{multline}%
+The continuation value function $V$ solves the functional equation 
+\begin{multline}
+V(\tau _{t-1},k_{t})=w\big(h(\tau _{t-1},k_{t}),k_{t},g(\tau
+_{t-1},k_{t}),\tau _{t-1}\big)  \label{eq:59} \\
++\delta V\big(g(\tau _{t-1},k_{t}),\theta k_{t}+h(\tau _{t-1},k_{t})\big).
+\end{multline}
+
+\subsubsection{The monopolist's problem}
+
+\label{sec:monopolists-problem}
+
+Since the monopolist discounts exponentially there is no $\beta$ in his
+Bellman equation and it is standard: 
+\begin{equation}
+\Pi (\tau _{t-1},k_{t})=\max_{x_{t}}\left\{ \pi (x_{t},g\left( \tau
+_{t-1},k_{t})\right) +\delta \Pi \left( g(\tau _{t-1},k_{t}),\theta
+k_{t}+x_{t}\right) \right\} .  \label{eq:73}
+\end{equation}
+
+\subsubsection{Equilibrium strategies}
+
+\label{sec:equil-strat-1}
+
+From Bellman equations \eqref{eq:58}--~\eqref{eq:73} we obtain the
+generalised Euler-Lagrange equations characterising the optimal strategies
+for each player.
+
+Using dynamic programming techniques, we can derive the monopolist's
+Euler-Lagrange equation. It is given by%
+\begin{equation}
+\pi _{2}^{t}g_{1}^{t}+\frac{g_{1}^{t}}{g_{2}^{t}}\left( \theta \pi
+_{1}^{t}-\pi _{2}^{t}g_{2}^{t}-\frac{1}{\delta }\pi _{1}^{t-1}\right) -\frac{%
+\theta \pi _{1}^{t-1}-\pi _{2}^{t-1}g_{2}^{t-1}-\frac{1}{\delta }\pi
+_{1}^{t-2}}{\delta g_{2}^{t-1}}=0.  \label{eq:84}
+\end{equation}%
+See Appendix \ref{sec:monopolists-problem-1} for the details.
+
+The Euler-Lagrange equation characterising the regulator's strategy is 
+\begin{multline}
+\frac{w_{3}^{t-1}g_{1}^{t-1}-\beta \left(
+w_{1}^{t-1}h_{1}^{t-1}+w_{3}^{t-1}g_{1}^{t-1}+w_{4}^{t-1}\right) }{\delta
+h_{1}^{t-1}}-\frac{w_{3}^{t-2}}{\delta ^{2}h_{1}^{t-1}}  \label{eq:30} \\
+=\beta (w_{1}^{t}h_{2}^{t}+w_{2}^{t}+w_{3}^{t}g_{2}^{t})-g_{2}^{t}w_{3}^{t}
+\\
++\frac{\left( \theta +h_{2}^{t}\right) }{h_{1}^{t}}\left[
+w_{3}^{t}g_{1}^{t}-\beta \left(
+w_{1}^{t}h_{1}^{t}+w_{3}^{t}g_{1}^{t}+w_{4}^{t}\right) -\frac{w_{3}^{t-1}}{%
+\delta }\right] .
+\end{multline}%
+The derivations are detailed in Appendix \ref{sec:regulators-problem-1}.
+
+To compare this game to the first-best outcome, let us consider the special
+case where $\kappa =0$, so policy change is costless. We substitute in the
+following partial derivatives of the welfare function: 
+\begin{align}
+w_{1}^{t}& =u^{\prime }(x_{t})-c^{\prime }(x_{t})  \label{eq:70} \\
+w_{2}^{t}& =-\phi ^{\prime }(x_{t}) \\
+w_{3}^{t}& =0 \\
+w_{4}^{t}& =0.
+\end{align}%
+After this substitution, Euler equation \eqref{eq:30} reduces to 
+\begin{equation}
+\frac{u^{\prime }(x_{t-1})-c^{\prime }(x_{t-1})}{\delta }-\phi ^{\prime
+}(x_{t})-\theta \big(u^{\prime }(x_{t})-c^{\prime }(x_{t})\big)=0.
+\label{eq:71}
+\end{equation}%
+Multiplying by $\delta $ and shifting the equation forward one period yields 
+\begin{equation}
+u^{\prime }(x_{t})-c^{\prime }(x_{t})-\delta \phi ^{\prime }(x_{t+1})-\delta
+\theta \big(u^{\prime }(x_{t+1})-c^{\prime }(x_{t+1})\big)=0\text{.}
+\label{eq:72}
+\end{equation}%
+Note that this replicates Euler equation \eqref{eq:45} that characterizes
+the precommitment outcome. Therefore, the regulation game will deliver the
+first-best output path.

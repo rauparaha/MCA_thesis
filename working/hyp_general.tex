@@ -1,0 +1,474 @@
+\documentclass{amsart}
+
+\usepackage{amssymb,amsmath}
+
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddel}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}}
+
+\linespread{1.5}
+
+\title{Hyperbolic discounting model: \\General functional forms} \date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Elements of the model}
+\label{sec:elements-model}
+
+\subsection{Consumer}
+\label{sec:consumer}
+
+Imagine a representative consumer with quasi-linear preferences across
+two goods: a polluting good, $x$, and a numeraire, $m$. The consumer's
+instantaneous utility function is
+\begin{equation}
+  \label{eq:1}
+  U(x,m) = u(x) + m.
+\end{equation}
+The function $u(x)$ must satisfy the Inada conditions in order for the
+inverse demand to be defined over all possible values of
+$x$.\textbf{[does this need a proof?]}
+
+The consumer's problem is then
+\begin{gather}
+  \label{eq:2}
+  \max_x u(x) + m \\
+  \mbox{s.t. } px + m \leq I.
+\end{gather}
+The FOC of this problem is
+\begin{equation}
+  \label{eq:3}
+  u'(x) = p
+\end{equation}
+so inverse demand in this market is
+\begin{equation}
+  \label{eq:4}
+  p=u'(x).
+\end{equation}
+
+\subsection{Monopolist}
+\label{sec:monopolist}
+
+The manufacturer of good $x$ faces costs $C(x)$ and monopolises the
+market. His instantaneous profit function is
+\begin{align}
+  \label{eq:5}
+  \pi &= R(x) - C(x) \\
+  &= u'(x).x - C(x).
+\end{align}
+
+
+\subsection{Regulator}
+\label{sec:regulator}
+
+The regulator recognises the pollution damage, $\phi(k_t)$, caused by
+the existence of the stock, $k_t$, of good $x$. The stock of the good
+evolves according to the rule
+\begin{equation}
+  \label{eq:6} k_t = \theta k^{t-1} + x^{t-1} \qquad \theta \in [0,1].
+\end{equation}
+
+Instantaneous welfare is
+\begin{align}
+  \label{eq:7}
+  w(x_t,k_t) &= \pi(x_t) + CS(x_t) - \phi(k_t) \\
+  &=  u'(x_t).x_t - C(x_t) + \int_0^{x_t} u'(x)\; dx - u'(x_t).x_t - \phi(k_t) \\
+  &= u(x_t) - C(x_t) - \phi(k_t)
+\end{align}
+
+The regulator suffers from time inconsistency and is modelled as
+having quasi-hyperbolic preferences with $\beta\delta$-discounting. As
+a result, the regulator's net present valuation of welfare is
+\begin{equation}
+  \label{eq:8}
+  W(x,k) = w(x_t,k_t) + \beta \sum_{i=1}^\infty \delta^i w(x_{t+i},k_{t+i}).
+\end{equation}
+
+\section{Laissez Faire equilibrium}
+\label{sec:laiss-faire-equil}
+
+Suppose that the monopolist acted unregulated. He then solves a static
+problem in each period:
+\begin{equation}
+  \label{eq:9}
+  \max_x u'(x).x - C(x).
+\end{equation}
+The FOC of this problem is
+\begin{equation}
+  \label{eq:10}
+  u''\left( x^{\ell}\right) .x^{\ell} + u'\left( x^{\ell}\right)  - C'\left( x^{\ell}\right)  = 0
+\end{equation}
+where $x^{\ell}$ denotes the laissez-faire level of output chosen by the
+monopolist. This shows the point at which marginal profit is equal to
+zero.
+
+
+\section{Regulation with precommitment}
+\label{sec:regul-with-prec}
+
+Suppose that the regulator can directly choose $\{ x_\tau
+\}_{\tau=t}^\infty$ at time $t$. The regulator must maximise
+\begin{equation}
+  \label{eq:11}
+  W_t(x,k) = \beta \sum_{i=1}^\infty \delta^i \left[ u(x_{t+i}) -
+    C(x_{t+i}) - \phi(k_{t+i}) \right] + \left[ u(x_t) -
+    C(x_t)  - \phi(k_t) \right]
+\end{equation}
+where $\delta$ is the discount rate and $\beta$ is the
+quasi-hyperbolic modifier on the future discount rate.
+
+This can be notated more simply as
+\begin{equation}
+  \label{eq:12} W_0 = w(x_0,k_0) + \beta\delta w(x_1,\theta k_0+x_0) +
+\beta\delta^2 w(x_2,x_1+\theta x_0+\theta^2 k_0) + \ldots
+\end{equation} Maximising this requires taking first-order conditionss
+with respect to $x_t \forall t\in [0,\infty)$. Derivatives are notated
+as usual with the time superscript taken from the time subscript of
+the state variable.
+\begin{align}
+  \label{eq:13} \del{W_0}{x_0} &= w_1^0 + \beta\delta w_2^1 +
+\theta\beta\delta^2 w_2^2 + \ldots = 0 \\ \label{eq:14} \del{W_0}{x_1}
+&=\beta\delta w_1^1 + \theta\beta\delta^2 w_2^2 + \theta\beta\delta^3
+w_2^3 + \ldots = 0 \\ \label{eq:15} \del{W_0}{x_2} &=\beta\delta^2
+w_1^2 + \theta\beta\delta^3 w_2^3 + \theta\beta\delta^4 w_2^4 + \ldots
+= 0 \\ &\hspace{2cm}\vdots
+\end{align} Compacting these conditions,
+\eqref{eq:13}$-$\eqref{eq:14}$\times\theta$ gives
+\begin{equation}
+  \label{eq:16} w^0_1 + \beta\delta \left(w^1_2 - \theta w^1_1 \right)
+= 0,
+\end{equation} and $($\eqref{eq:15}$-$\eqref{eq:16}$\times\theta ) /
+\beta\delta$ gives
+\begin{equation}
+  \label{eq:17} w^t_1 + \delta \left(w^{t+1}_2 - \theta w^{t+1}_1 \right)
+= 0 \qquad \forall\; t \geq 2
+\end{equation}
+which expands to
+\begin{equation}
+  \label{eq:18}
+  u'(x_t) - C'(x_t) - \delta\theta \left( u'(x_{t+1}) -
+    C'(x_{t+1})\right) - \delta\phi'(k_{t+1}) = 0 \qquad \forall\; t
+  \geq 2
+\end{equation}
+
+\subsection{Comparison to laissez-faire outcome}
+\label{sec:comp-laiss-faire}
+
+At this point it is important to see how the first-best outcome
+compares to the laissez-faire outcome previously derived
+(equation ~\eqref{eq:10}). The laissez faire equilibrium is
+characterised by equation \eqref{eq:10}:
+\begin{equation}
+  \label{eq:19}
+  u'\left( x^{\ell}\right) - C'\left( x^{\ell}\right) + u''\left(
+    x^{\ell}\right) x^{\ell} = 0.
+\end{equation}
+This equates the monopolist's marginal profit to zero. Since profit is
+concave, marginal profit is a decreasing function.
+
+In order to tractably compare this equilibrium condition to the first
+best outcome it is necessary to focus upon the steady state of the
+dynamic game. Suppose that $x_1 = x_2 = \ldots = x_T = \bar{x}$, and
+similarly for the state variable, $k_t$. Now rearrange equation
+\eqref{eq:18}
+\begin{equation}
+  \label{eq:20}
+  u'\left( \bar{x}\right) - C'\left( \bar{x}\right) =
+  \frac{\delta\phi'\left( \bar{k}\right)}{1-\delta\theta}
+\end{equation}
+and add $u''\left( \bar{x}\right) \bar{x}$ to both sides:
+\begin{equation}
+  \label{eq:21} 
+  u'\left( \bar{x}\right) - C'\left( \bar{x}\right) +
+  u''\left( \bar{x}\right) \bar{x} = \frac{\delta\phi'\left(
+      \bar{k}\right)}{1-\delta\theta} + u''\left( \bar{x}\right)
+  \bar{x}. 
+\end{equation}
+Remembering that marginal profit is a decreasing function, if
+$\frac{\delta\phi'\left( \bar{k}\right)}{1-\delta\theta} + u''\left(
+  \bar{x}\right) \bar{x} > 0$ then $\bar{x} < x^{\ell}$ and vice
+versa.
+
+Signing the component parts gives
+\begin{align}
+  \label{eq:22}
+  \delta\phi'\left( \bar{x}\right) &> 0 \\
+  1-\beta\delta &> 0 \\
+  \intertext{by assumption, and} 
+  u''\left( \bar{x}\right) \bar{x} &< 0
+\end{align}
+because $u(\cdot)$ exhibits diminishing marginal utility. So if
+\begin{equation}
+  \label{eq:23}
+  \frac{\delta\phi'\left( \bar{k}\right)}{1-\delta\theta} > u''\left(
+    \bar{x}\right) \bar{x}
+\end{equation}
+then $\bar{x} < x^{\ell}$. The left hand component of the inequality shows the
+cost of the externality, while the right hand component shows the
+deadweight loss due to the exercise of monopoly power. The externality
+effect causes the quantity produced to be too high, while the firm's
+market power depresses production. Regulation to diminish pollution is
+only worthwhile when the former outweighs the latter. Henceforth, we
+shall assume that equation \eqref{eq:23} holds.
+
+
+\section{Regulation without precommitment}
+\label{sec:regul-with-prec-2}
+
+Now suppose that the regulator can still directly choose output but is
+no longer able to precommit to future output decisions. The problem
+must be formulated recursively in order to solve for a time consistent
+output path.
+
+The problem will first be solved with reduced form notation and then
+functional forms can later be substituted in.
+
+Let the MPE strategy of the regulator be $x_t = f(k_t)$. Then his
+current period value function is
+\begin{equation}
+  \label{eq:24} U(k_t) = \max_{x_t} \left\{ w(x_t,k_t) + \beta\delta
+V( \theta k_t + x_t) \right\}.
+\end{equation} From period $t+1$ onward the value function is
+$V(k_t)$.
+\begin{equation}
+  \label{eq:25} V(k_t) = w\left( f(k_t),k_t\right) + \delta V\left(
+\theta k_t + f(k_t) \right).
+\end{equation}
+
+The current period's FOC is
+\begin{align} w^t_1 + \beta\delta V^{t+1}_1 &= 0 \\ \label{eq:26}
+\therefore V^{t+1}_1 &= -\frac{w^t_1}{\beta\delta}.
+\end{align} Differentiating \eqref{eq:25} gives
+\begin{equation}
+  \label{eq:27} V^t_1 = w^t_1f^t_1 + w^t_2 + \delta V^{t+1}_1 (\theta
+f^t_1)
+\end{equation} and substituting in equation \eqref{eq:26} gives the
+reduced form Euler-Lagrange equation:
+\begin{equation}
+  \label{eq:28} w^t_1 + \beta\delta( w^{t+1}_1 f^{t+1}_1 + w^{t+1}_2 )
+- \delta (\theta + f^{t+1}_1)w^{t+1}_1 = 0.
+\end{equation}
+
+This expands to give
+\begin{multline}
+  \label{eq:29}
+  u'(x_t) - C'(x_t) + \beta\delta\left( \left(
+      u'(x_{t+1}) - C'(x_{t+1}) \right) f^{t+1}_1 - \phi'(k_t) \right)\\
+  - \delta (\theta + f^{t+1}_1)\left( u'(x_{t+1}) - C'(x_{t+1})
+  \right) = 0.
+\end{multline}
+
+It is unnecessary to compare this outcome directly to the first best
+\textbf{[I hope.]} Rather note that it is significantly different from
+the first best outcome's generalised Euler equation and it will thus
+produce a different price path. \textbf{[This is totally inadequate.
+  Is this even true?!]}
+
+
+\section{Regulation with delegation}
+\label{sec:regul-with-deleg}
+
+The delegation game involves the regulator setting a tax rate for
+pollution simultaneously with the monopolist's choice of output in
+each period. Both the tax and the choice of output are feedback
+strategies. We consider only a linear tax, however there are two
+possible ways to levy it. It can be levied on either emissions or upon
+the stock of pollution.
+
+The case of a tax on emissions will be considered first and then the
+problem with a pollution tax will be solved.
+
+\subsection{The welfare function}
+\label{sec:welfare-function}
+
+The regulator's problem changes for two reasons: first, because he
+gains revenue from taxation and, secondly, because we introduce a cost
+to changing the tax rate. Economists are often criticised by
+policymakers for excluding the costs of implementation when they
+recommend taxes. Here, we explicitly include the costs of implementing
+and modifying tax schemes in the regulator's welfare function.
+
+Suppose that the tax is levied on emissions, the value of the tax
+revenue to the regulator is $\gamma$, and the the cost of changing
+policies is $\kappa \rho(\tau_t,\tau_{t-1})$ \textbf{[would
+  $\rho\left(\left| \tau_t - \tau_{t-1}\right|\right)$ be more
+  appropriate and accurate?]}, where $\tau_t$ is the period $t$ tax
+rate. Then the welfare function becomes
+\begin{equation}
+  \label{eq:30}
+  w(x_t,k_t,\tau_t,\tau_{t-1}) = u(x_t) - C(x_t) - \phi(k_t) +
+  (\gamma -1)\tau_tx_t - \kappa \rho(\tau_t,\tau_{t-1}).
+\end{equation}
+\textbf{[what conditions should I impose on $\rho$]}
+Note that, if $\gamma=1$ then the tax is a simple transfer
+from the monopolist to the consumers and doesn't directly affect the
+welfare function. Similarly, if $\kappa=0$ then there are no costs of
+policy adjustment.
+
+\subsection{The profit function}
+\label{sec:profit-function}
+
+With taxation the monopolist's instantaneous profit becomes
+\begin{equation}
+  \label{eq:31}
+  u'(x_t).x_t - C(x_t) - \tau_tx_t.
+\end{equation}
+
+
+\subsection{The game}
+\label{sec:game}
+
+Let the MPE strategy of the monopolist be $x_t = h(\tau_{t-1},k_t)$
+and the MPE strategy of the regulator be $\tau_t = g(\tau_{t-1},k_t)$.
+
+\subsubsection{Regulator}
+\label{sec:regulator-1}
+
+Current period value function:
+\begin{equation}
+  \label{eq:32}
+  U(\tau_{t-1},k_t) = \max_{\tau_t} \bigg\{ w\big(
+    h(\tau_{t-1},k_t),k_t,\tau_t,\tau_{t-1}\big) + \beta\delta V
+  \big( \tau_t,\theta k_t + h(\tau_{t-1},k_t) \big) \bigg\}
+\end{equation}
+
+Continuation value function:
+\begin{multline}
+  \label{eq:33}
+  V(\tau_{t-1},k_t) = w\big(
+  h(\tau_{t-1},k_t),k_t,g(\tau_{t-1},k_t),\tau_{t-1}\big) \\ +
+  \delta V \big( g(\tau_{t-1},k_t),\theta k_t + h(\tau_{t-1},k_t)
+  \big)
+\end{multline}
+
+FOC:
+\begin{align}
+  \label{eq:34}
+  w^t_3 + \beta\delta V^{t+1}_1  &= 0 \\
+  \label{eq:35} \therefore V^{t+1}_1 &= -\frac{w^t_3}{\beta\delta}
+\end{align}
+
+Envelope conditions:
+\begin{align}
+  \label{eq:36}
+  V^t_1 &= w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 + \delta \left[
+V^{t+1}_1g^t_1 + V^{t+1}_2h^t_1 \right] \\ \label{eq:37}
+  V^t_2 &= w^t_1h^t_2 + w^t_2 + w^t_3g^t_2 + \delta \left[
+    V^{t+1}_1g^t_2 + V^{t+1}_2 \left( \theta + h^t_2 \right)\right]
+\end{align}
+
+Now substituting \eqref{eq:35} into \eqref{eq:36} gives
+\begin{gather}
+  \label{eq:38}
+  w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 - \frac{w^t_3g^t_1}{\beta} + \delta
+  V^{t+1}_2h^t_1 + \frac{w^{t-1}_3}{\beta\delta} = 0 \\ \label{eq:39}
+  \therefore V^{t+1}_2 = \frac{w^t_3g^t_1}{\beta\delta h^t_1} -
+  \frac{w^t_1h^t_1 + w^t_3g^t_1 + w^t_4}{\delta h^t_1} -
+  \frac{w^{t-1}_3}{\beta\delta^2 h^t_1}
+\end{gather}
+and \eqref{eq:39},~\eqref{eq:36}$\rightarrow$~\eqref{eq:37}:
+\begin{multline}
+  \label{eq:40}
+  \frac{w^{t-1}_3g^{t-1}_1 - \beta\left( w^{t-1}_1h^{t-1}_1 +
+      w^{t-1}_3g^{t-1}_1 + w^{t-1}_4 \right)}{\delta h^{t-1}_1} \\ -
+  \frac{w^{t-2}_3}{\delta^2 h^{t-1}_1} =
+  \beta ( w^t_1h^t_2 + w^t_2 + w^t_3g^t_2 ) - g^t_2w^t_3 \\
+  +\frac{\left( \theta + h^t_2 \right)}{h^t_1} \left[ w^t_3g^t_1 -
+    \beta\left( w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 \right) -
+    \frac{w^{t-1}_3}{\delta} \right].
+\end{multline}
+
+In the special case where $\gamma=1, \kappa=0$ this can be simplified
+by substituting in the partial derivatives of the welfare function:
+\begin{align}
+  \label{eq:41}
+  w^t_1 &= u'(x_t) - c'(x_t) \\ \label{eq:42} w^t_2 &= -\phi'(x_t)
+  \\ \label{eq:43} w^t_3 &= 0 \\ \label{eq:44} w^t_4 &= 0.
+\end{align}
+
+After substitution the Euler equation, \eqref{eq:40} reduces to
+\begin{equation}
+  \label{eq:45}
+  \frac{u'(x_{t-1}) - c'(x_{t-1})}{\delta} - \phi'(x_t) - \theta \big(
+  u'(x_t) - c'(x_t) \big) = 0.
+\end{equation}
+Multiplying by $\delta$ and shifting the equation forward one period
+gives
+\begin{equation}
+  \label{eq:46}
+  u'(x_t) - c'(x_t) - \delta \phi'(x_{t+1}) - \delta\theta \big(
+  u'(x_{t+1}) - c'(x_{t+1}) \big) = 0
+\end{equation}
+which replicates the result of equation \eqref{eq:18}, the
+precommitment outcome.
+
+\subsubsection{Monopolist}
+\label{sec:monopolist-1}
+
+Since the monopolist discounts exponentially, he has a stationary
+value function:
+\begin{equation}
+  \label{eq:47}
+  \Pi(\tau_{t-1},k_t) = \max_{x_t} \left\{
+    \pi(x_t,g\left(\tau_{t-1},k_t)\right) + \delta \Pi \left(
+      g(\tau_{t-1},k_t), \theta k_t + x_t \right) \right\}.
+\end{equation}`
+FOC:
+\begin{align}
+  \pi^t_1 + \delta \Pi^{t+1}_2 &= 0 \\  \label{eq:48}
+  \therefore \Pi^{t+1}_2 &= -\frac{\pi^t_1}\delta.
+\end{align}
+Envelope conditions:
+\begin{align}
+  \label{eq:49}
+  \Pi^t_1 &= \pi^t_2g^t_1 + \delta \Pi^{t+1}_1g^t_1 \\\label{eq:50}
+  \Pi^t_2 &= \pi^t_2g^t_2 + \delta \Pi^{t+1}_1g^t_2 + \theta\delta\Pi^{t+1}_2.
+\end{align}
+Solving for the Euler equation:
+\eqref{eq:48}$\to$\eqref{eq:50} gives
+\begin{align}
+  \label{eq:51}
+  -\frac{\pi^{t-1}_1}\delta &= \pi^t_2g^t_2 - \theta\pi^t_1 + \delta
+  \Pi^{t+1}_1g^t_2 \\\label{eq:52}
+  \Pi^{t+1}_1 &= \frac{\theta\pi^t_1 - \pi^t_2g^t_2 -
+    \frac{1}\delta\pi^{t-1}_1}{\delta g^t_2}.
+\end{align}
+Now, (\ref{eq:52})$\rightarrow$(\ref{eq:49}) yields the Euler-Lagrange
+equation:
+\begin{equation}
+  \label{eq:53}
+  \pi^t_2g^t_1 + \frac{g^t_1}{g^t_2} \left( \theta \pi^t_1 -
+    \pi^t_2g^t_2 - \frac{1}\delta\pi^{t-1}_1 \right) -
+  \frac{\theta\pi^{t-1}_1 - \pi^{t-1}_2g^{t-1}_2 -
+    \frac{1}\delta\pi^{t-2}_1}{\delta g^{t-1}_2} = 0
+\end{equation}
+
+The derivatives of the profit function can now be found and
+substituted in.
+\begin{multline}
+  \label{eq:54}
+  (-x_t)g^t_1 + \frac{g^t_1}{g^t_2} \bigg( \theta \bigg( u''(x_t)x_t +
+      u'(x_t) - C'(x_t) - \tau_t \bigg) \\ -
+    (-x_t)g^t_2 - \frac{1}\delta\bigg( u''(x_{t-1})x_{t-1} +
+      u'(x_{t-1}) - C'(x_{t-1}) - \tau_{t-1} \bigg) \bigg) \\ - 
+  \frac{\theta\bigg( u''(x_{t-1})x_{t-1} + u'(x_{t-1}) - C'(x_{t-1}) - \tau_{t-1} \bigg) - (-x_{t-1})g^{t-1}_2 \\-
+    \frac{1}\delta\bigg( u''(x_{t-2})x_{t-2} + u'(x_{t-2}) - C'(x_{t-2}) - \tau_{t-2} \bigg)}{\delta g^{t-1}_2} = 0 
+\end{multline}
+
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+% LocalWords:  externality deadweight

@@ -1,0 +1,139 @@
+\chapter[Hyperbolic derivations]{Hyperbolic discounting equilibrium derivations}
+\label{cha:hyperb-disc}
+
+\section{First best regulation}
+\label{sec:first-best-regul-1}
+
+Equations \eqref{eq:38} and \eqref{eq:83} can be combined to give
+lifetime welfare from the viewpoint of the period-$0$ regulator:
+\begin{equation}
+  \label{eq:39} W_0 = w(x_0,k_0) + \beta\delta w(x_1,\theta k_0+x_0) +
+  \beta\delta^2 w(x_2,x_1+\theta x_0+\theta^2 k_0) + \ldots
+\end{equation} Maximising this function requires taking first-order conditions
+with respect to $x_t \;\forall t\in [0,\infty)$. Derivatives are notated
+as usual with the time superscript taken from the time subscript of
+the state variable.
+\begin{align}
+  \label{eq:40} \del{W_0}{x_0} &= w_1^0 + \beta\delta w_2^1 +
+  \theta\beta\delta^2 w_2^2 + \ldots = 0 \\
+  \label{eq:41} \del{W_0}{x_1}
+  &=\beta\delta w_1^1 + \theta\beta\delta^2 w_2^2 + \theta\beta\delta^3
+  w_2^3 + \ldots = 0 \\
+  \label{eq:42} \del{W_0}{x_2} &=\beta\delta^2 w_1^2 +
+  \theta\beta\delta^3 w_2^3 + \theta\beta\delta^4 w_2^4 + \ldots
+  = 0 \\
+  &\hspace{3cm}\vdots
+\end{align} Compacting these conditions,
+\eqref{eq:40}$-$\eqref{eq:41}$\times\theta$ gives
+\begin{equation}
+  \label{eq:43} w^0_1 + \beta\delta \left(w^1_2 - \theta w^1_1 \right)
+  = 0,
+\end{equation} and $($\eqref{eq:42}$-$\eqref{eq:43}$\times\theta ) /
+\beta\delta$ gives
+\begin{equation}
+  \label{eq:44} w^t_1 + \delta \left(w^t_2 - \theta w^{t+1}_1 \right)
+  = 0 \qquad \forall\; t \geq 2.
+\end{equation}
+
+
+\section{Second best regulation}
+\label{sec:second-best-regul-1}
+
+The current period's first-order condition for welfare maximisation is
+\begin{align}
+  w^t_1 + \beta\delta V^{t+1}_1 &= 0 \\
+  \label{eq:53}
+  \therefore V^{t+1}_1 &= -\frac{w^t_1}{\beta\delta}.
+\end{align}
+Differentiating \eqref{eq:52} gives
+\begin{equation}
+  \label{eq:54}
+  V^t_1 = w^t_1f^t_1 + w^t_2 + \delta V^{t+1}_1 (\theta f^t_1)
+\end{equation}
+and substituting in equation \eqref{eq:53} gives the Euler-Lagrange
+equation:
+\begin{equation}
+ \label{eq:85}
+  w^t_1 + \beta\delta( w^{t+1}_1 f^{t+1}_1
+  + w^{t+1}_2 ) - \delta (\theta + f^{t+1}_1)w^{t+1}_1 = 0.
+\end{equation}
+
+\section{The regulation game}
+\label{sec:regulation-game-1}
+
+\subsection{The regulator's problem}
+\label{sec:regulators-problem-1}
+
+To solve for the generalised Euler equation that characterises the
+welfare maximising price path we first take first order conditions:
+\begin{align}\label{eq:60}
+  w^t_3 + \beta\delta V^{t+1}_1  &= 0 \\
+  \label{eq:61} \therefore V^{t+1}_1 &= -\frac{w^t_3}{\beta\delta}.
+\end{align}
+Taking the envelope conditions for this problem from equation
+\eqref{eq:59} gives
+\begin{align}
+  \label{eq:62} V^t_1 &= w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 + \delta
+  \left[ V^{t+1}_1g^t_1 + V^{t+1}_2h^t_1 \right] \\ \label{eq:63}
+  V^t_2 &= w^t_1h^t_2 + w^t_2 + w^t_3g^t_2 + \delta \left[
+    V^{t+1}_1g^t_2 + V^{t+1}_2 \left( \theta + h^t_2 \right)\right].
+\end{align}
+Solving for the Euler-Lagrange equation: \eqref{eq:61}
+$\rightarrow$ \eqref{eq:62} gives
+\begin{gather}
+  \label{eq:64} w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 - \frac{w^t_3g^t_1}{\beta} + \delta
+  V^{t+1}_2h^t_1 + \frac{w^{t-1}_3}{\beta\delta} = 0 \\ \label{eq:65}
+  \therefore V^{t+1}_2 = \frac{w^t_3g^t_1}{\beta\delta h^t_1} -
+  \frac{w^t_1h^t_1 + w^t_3g^t_1 + w^t_4}{\delta h^t_1} -
+  \frac{w^{t-1}_3}{\beta\delta^2 h^t_1}
+\end{gather} Now \eqref{eq:61},~\eqref{eq:64}
+$\rightarrow$~\eqref{eq:63} gives the result
+\begin{multline}
+  \label{eq:66}
+  \frac{w^{t-1}_3g^{t-1}_1 - \beta\left( w^{t-1}_1h^{t-1}_1 +
+      w^{t-1}_3g^{t-1}_1 + w^{t-1}_4 \right)}{\delta h^{t-1}_1}  -
+  \frac{w^{t-2}_3}{\delta^2 h^{t-1}_1} \\=
+  \beta ( w^t_1h^t_2 + w^t_2 + w^t_3g^t_2 ) - g^t_2w^t_3 \\
+  +\frac{\left( \theta + h^t_2 \right)}{h^t_1} \left[ w^t_3g^t_1 -
+    \beta\left( w^t_1h^t_1 + w^t_3g^t_1 + w^t_4 \right) -
+    \frac{w^{t-1}_3}{\delta} \right].
+\end{multline}
+
+\subsection{The monopolist's problem}
+\label{sec:monopolists-problem-1}
+
+The first order condition of this problem is
+\begin{align}
+  \pi^t_1 + \delta \Pi^{t+1}_2 &= 0 \\  \label{eq:74}
+  \therefore \Pi^{t+1}_2 &= -\frac{\pi^t_1}\delta.
+\end{align}
+The envelope conditions for this problem are
+\begin{align}
+\label{eq:75}
+  \Pi^t_1 &= \pi^t_2g^t_1 + \delta \Pi^{t+1}_1g^t_1, \\ \label{eq:76}
+  \Pi^t_2 &= \pi^t_2g^t_2 + \delta \Pi^{t+1}_1g^t_2 + \theta\delta\Pi^{t+1}_2.
+\end{align}
+Solving for the Euler equation:
+\eqref{eq:74}$\to$\eqref{eq:75} gives
+\begin{align}
+\label{eq:77}
+  -\frac{\pi^{t-1}_1}\delta &= \pi^t_2g^t_2 - \theta\pi^t_1 + \delta
+  \Pi^{t+1}_1g^t_2 \\\label{eq:78}
+  \Pi^{t+1}_1 &= \frac{\theta\pi^t_1 - \pi^t_2g^t_2 -
+    \frac{1}\delta\pi^{t-1}_1}{\delta g^t_2}.
+\end{align}
+Now, (\ref{eq:78})$\rightarrow$(\ref{eq:76}) yields the Euler-Lagrange
+equation:
+\begin{equation}
+\label{eq:79}
+  \pi^t_2g^t_1 + \frac{g^t_1}{g^t_2} \left( \theta \pi^t_1 -
+    \pi^t_2g^t_2 - \frac{1}\delta\pi^{t-1}_1 \right) -
+  \frac{\theta\pi^{t-1}_1 - \pi^{t-1}_2g^{t-1}_2 -
+    \frac{1}\delta\pi^{t-2}_1}{\delta g^{t-1}_2} = 0
+\end{equation}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:
